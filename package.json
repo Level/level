@@ -24,11 +24,11 @@
       , "storage"
       , "json"
     ]
-  , "version"         : "0.10.0"
+  , "version"         : "0.11.0"
   , "main"            : "index.js"
   , "dependencies"    : {
         "leveldown"           : "~0.6.0"
-      , "levelup"             : "~0.10.0"
+      , "levelup"             : "~0.11.0"
     }
   , "repository"      : {
         "type"            : "git"
