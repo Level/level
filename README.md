@@ -6,7 +6,8 @@ Level
 Fast & simple storage - a Node.js-style LevelDB wrapper
 -------------------------------------------------------
 
-[![NPM](https://nodei.co/npm/level.png)](https://nodei.co/npm/level/)
+[![NPM](https://nodei.co/npm/level.png?stars&downloads)](https://nodei.co/npm/level/) [![NPM](https://nodei.co/npm-dl/level.png)](https://nodei.co/npm/level/)
+
 
 This is a convenience package that bundles the current release of **[LevelUP](https://github.com/rvagg/node-levelup)** and **[LevelDOWN](https://github.com/rvagg/node-leveldown)** and exposes LevelUP on its export.
 
