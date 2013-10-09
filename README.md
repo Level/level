@@ -3,7 +3,7 @@ Level
 
 ![LevelDB Logo](https://twimg0-a.akamaihd.net/profile_images/3360574989/92fc472928b444980408147e5e5db2fa_bigger.png)
 
-### Fast & simple storage - a Node.js-style LevelDB wrapper**
+**Fast & simple storage - a Node.js-style LevelDB wrapper**
 
 [![NPM](https://nodei.co/npm/level.png?stars&downloads)](https://nodei.co/npm/level/) [![NPM](https://nodei.co/npm-dl/level.png)](https://nodei.co/npm/level/)
 
