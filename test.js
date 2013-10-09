@@ -1,4 +1,1 @@
-var assert = require('assert')
-
-assert(require('./') === require('levelup'))
-console.log('All good! level === levelup')
+require('level-packager/test')(require('./'))
