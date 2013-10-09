@@ -36,6 +36,9 @@
         "leveldown"       : "~0.9.0"
       , "level-packager"  : "~0.17.0"
     }
+  , "devDependencies" : {
+        "tape"            : "*"
+    }
   , "scripts"         : {
         "test"            : "node ./test.js"
     }
