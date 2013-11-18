@@ -1,7 +1,7 @@
 {
     "name"            : "level"
   , "description"     : "Fast & simple storage - a Node.js-style LevelDB wrapper (a convenience package bundling LevelUP & LevelDOWN)"
-  , "version"         : "0.17.0-1"
+  , "version"         : "0.18.0"
   , "contributors"    : [
         "Rod Vagg <r@va.gg> (https://github.com/rvagg)"
       , "John Chesley <john@chesl.es> (https://github.com/chesles/)"
@@ -33,8 +33,8 @@
     ]
   , "main"            : "level.js"
   , "dependencies"    : {
-        "leveldown"       : "~0.9.0"
-      , "level-packager"  : "~0.17.0"
+        "leveldown"       : "~0.10.0"
+      , "level-packager"  : "~0.18.0"
     }
   , "devDependencies" : {
         "tape"            : "*"
