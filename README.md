@@ -68,10 +68,10 @@ Level, including LevelUP & LevelDOWN, is only possible due to the excellent work
 </tbody></table>
 
 
-<a name="licence"></a>
-Licence &amp; copyright
+<a name="license"></a>
+License &amp; copyright
 -------------------
 
-Copyright (c) 2012-2013 Level contributors (listed above).
+Copyright (c) 2012-2014 Level contributors (listed above).
 
-Level is licensed under an MIT +no-false-attribs license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.
+Level is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.
