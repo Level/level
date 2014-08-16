@@ -7,7 +7,7 @@ Level
 
 [![Build Status](https://secure.travis-ci.org/Level/level.png)](http://travis-ci.org/Level/level)
 
-[![NPM](https://nodei.co/npm/level.png?stars&downloads)](https://nodei.co/npm/level/) [![NPM](https://nodei.co/npm-dl/level.png)](https://nodei.co/npm/level/)
+[![NPM](https://nodei.co/npm/level.png?stars&downloads&downloadRank)](https://nodei.co/npm/level/) [![NPM](https://nodei.co/npm-dl/level.png?months=6&height=3)](https://nodei.co/npm/level/)
 
 
 This is a convenience package that bundles the current release of **[LevelUP](https://github.com/rvagg/node-levelup)** and **[LevelDOWN](https://github.com/rvagg/node-leveldown)** and exposes LevelUP on its export.
