@@ -1,7 +1,7 @@
 Level
 =====
 
-![LevelDB Logo](https://twimg0-a.akamaihd.net/profile_images/3360574989/92fc472928b444980408147e5e5db2fa_bigger.png)
+<img alt="LevelDB Logo" height="100" src="http://leveldb.org/img/logo.svg">
 
 **Fast & simple storage - a Node.js-style LevelDB wrapper**
 
@@ -72,6 +72,6 @@ Level, including LevelUP & LevelDOWN, is only possible due to the excellent work
 License &amp; copyright
 -------------------
 
-Copyright (c) 2012-2014 Level contributors (listed above).
+Copyright (c) 2012-2015 Level contributors (listed above).
 
 Level is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.
