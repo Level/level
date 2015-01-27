@@ -33,7 +33,7 @@
     ]
   , "main"            : "level.js"
   , "dependencies"    : {
-        "leveldown"       : "~0.10.0"
+        "leveldown"       : "~1.0.1"
       , "level-packager"  : "~0.18.0"
     }
   , "devDependencies" : {
