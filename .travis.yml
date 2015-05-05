@@ -1,10 +1,39 @@
-language: node_js
-node_js:
-  - "0.8"
-  - "0.10"
+language: c
+
+before_install:
+  - rm -rf ~/.nvm
+  - wget https://raw.githubusercontent.com/visionmedia/n/master/bin/n -qO n
+  - chmod +x n
+  - sudo cp n /usr/local/bin/n
+  - sudo chmod -R a+xw /usr/local
+  - n --version
+
 branches:
   only:
     - master
+
+script:
+  - n io latest
+  - iojs -v; npm -v;
+  - JOBS=max npm install
+  - npm test && rm -rf node_modules/
+
+  - n latest
+  - node -v; npm -v;
+  - JOBS=max npm install
+  - npm test && rm -rf node_modules/
+
+  - n 0.10
+  - node -v; npm -v;
+  - JOBS=max npm install
+  - npm test && rm -rf node_modules/
+
+  - n 0.8
+  - npm install npm -g
+  - node -v; npm -v;
+  - JOBS=max npm install
+  - npm test && rm -rf node_modules/
+
 notifications:
   email:
     - r@va.gg
@@ -12,7 +41,7 @@ notifications:
     - raynos2@gmail.com
     - dominic.tarr@gmail.com
     - max@maxogden.com
-    - lars.magnus.skog@gmail.com
+    - ralphtheninja@riseup.net
     - david.bjorklund@gmail.com
     - julian@juliangruber.com
     - paolo@async.ly
@@ -20,4 +49,3 @@ notifications:
     - matteo.collina@gmail.com
     - pedro.teixeira@gmail.com
     - mail@substack.net
-script: npm test
