@@ -34,7 +34,7 @@
   "main": "level.js",
   "dependencies": {
     "level-packager": "~1.0.0",
-    "leveldown": "~1.0.6"
+    "leveldown": "~1.2.2"
   },
   "devDependencies": {
     "tape": "~4.0.0"
