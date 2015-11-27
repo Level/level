@@ -6,6 +6,7 @@ Level
 **Fast & simple storage - a Node.js-style LevelDB wrapper**
 
 [![Build Status](https://secure.travis-ci.org/Level/level.png)](http://travis-ci.org/Level/level)
+[![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level)
 
 [![NPM](https://nodei.co/npm/level.png?stars&downloads&downloadRank)](https://nodei.co/npm/level/) [![NPM](https://nodei.co/npm-dl/level.png?months=6&height=3)](https://nodei.co/npm/level/)
 
