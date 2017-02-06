@@ -52,6 +52,6 @@ See the [`CONTRIBUTING.md`](https://github.com/Level/community/blob/master/CONTR
 License &amp; Copyright
 -------------------
 
-Copyright (c) 2012-2015 **Level** [contributors](https://github.com/level/community#contributors).
+Copyright (c) 2012-2017 **Level** [contributors](https://github.com/level/community#contributors).
 
 Level is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included `LICENSE.md` file for more details.
