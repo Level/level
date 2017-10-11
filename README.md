@@ -1,6 +1,6 @@
 # level
 
-**Fast & simple storage - a Node.js-style LevelDB wrapper**
+> Fast & simple storage. A Node.js-style `LevelDB` wrapper.
 
 [![level badge](http://leveldb.org/img/badge.svg)](https://github.com/level/awesome)
 [![npm](https://img.shields.io/npm/v/level.svg)](https://www.npmjs.com/package/level)
@@ -21,15 +21,15 @@ var level = require('level')
 //    This will create or open the underlying LevelDB store.
 var db = level('./mydb')
 
-// 2) put a key & value
+// 2) Put a key & value
 db.put('name', 'Level', function (err) {
   if (err) return console.log('Ooops!', err) // some kind of I/O error
 
-  // 3) fetch by key
+  // 3) Fetch by key
   db.get('name', function (err, value) {
     if (err) return console.log('Ooops!', err) // likely the key was not found
 
-    // ta da!
+    // Ta da!
     console.log('name=' + value)
   })
 })
@@ -38,19 +38,17 @@ db.put('name', 'Level', function (err) {
 See [`levelup`](https://github.com/level/levelup) and [`leveldown`](https://github.com/level/leveldown) for more details.
 
 <a name="contributing"></a>
-Contributing
-------------
+## Contributing
 
-Level is an **OPEN Open Source Project**. This means that:
+`level` is an **OPEN Open Source Project**. This means that:
 
 > Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.
 
 See the [`CONTRIBUTING.md`](https://github.com/Level/community/blob/master/CONTRIBUTING.md) file for more details.
 
 <a name="license"></a>
-License &amp; Copyright
--------------------
+## License &amp; Copyright
 
-Copyright (c) 2012-2017 **Level** [contributors](https://github.com/level/community#contributors).
+Copyright (c) 2012-2017 `level` [contributors](https://github.com/level/community#contributors).
 
-Level is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included `LICENSE.md` file for more details.
+`level` is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included `LICENSE.md` file for more details.
