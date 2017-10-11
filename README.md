@@ -3,13 +3,12 @@
 **Fast & simple storage - a Node.js-style LevelDB wrapper**
 
 [![level badge](http://leveldb.org/img/badge.svg)](https://github.com/level/awesome)
+[![npm](https://img.shields.io/npm/v/level.svg)](https://www.npmjs.com/package/level)
 [![Build Status](https://secure.travis-ci.org/Level/level.png)](http://travis-ci.org/Level/level)
 [![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![npm](https://img.shields.io/npm/dm/level.svg)](https://www.npmjs.com/package/level)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Level/level.svg)](https://greenkeeper.io/)
-
-[![NPM](https://nodei.co/npm/level.png?stars&downloads&downloadRank)](https://nodei.co/npm/level/) [![NPM](https://nodei.co/npm-dl/level.png?months=6&height=3)](https://nodei.co/npm/level/)
-
 
 This is a convenience package that bundles the current release of **[LevelUP](https://github.com/level/levelup)** and **[LevelDOWN](https://github.com/level/leveldown)** and exposes LevelUP on its export.
 
