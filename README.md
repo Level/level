@@ -1,10 +1,8 @@
-Level
-=====
-
-<img alt="LevelDB Logo" height="100" src="http://leveldb.org/img/logo.svg">
+# level
 
 **Fast & simple storage - a Node.js-style LevelDB wrapper**
 
+[![level badge](http://leveldb.org/img/badge.svg)](https://github.com/level/awesome)
 [![Build Status](https://secure.travis-ci.org/Level/level.png)](http://travis-ci.org/Level/level)
 [![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
