@@ -10,9 +10,9 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/dm/level.svg)](https://www.npmjs.com/package/level)
 
-This is a convenience package that bundles the current release of **[LevelUP](https://github.com/level/levelup)** and **[LevelDOWN](https://github.com/level/leveldown)** and exposes LevelUP on its export.
+This is a convenience package that bundles the current release of [`levelup`](https://github.com/level/levelup) and [`leveldown`](https://github.com/level/leveldown) and exposes `levelup` on its export.
 
-Use this package to avoid having to explicitly install LevelDOWN when you just want plain old LevelDB from LevelUP.
+Use this package to avoid having to explicitly install `leveldown` when you just want plain old `LevelDB` from `levelup`.
 
 ```js
 var level = require('level')
@@ -35,7 +35,7 @@ db.put('name', 'Level', function (err) {
 })
 ```
 
-See **[LevelUP](https://github.com/rvagg/node-levelup)** and **[LevelDOWN](https://github.com/rvagg/node-leveldown)** for more details.
+See [`levelup`](https://github.com/level/levelup) and [`leveldown`](https://github.com/level/leveldown) for more details.
 
 <a name="contributing"></a>
 Contributing
