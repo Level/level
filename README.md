@@ -8,7 +8,6 @@
 [![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/dm/level.svg)](https://www.npmjs.com/package/level)
-[![Greenkeeper badge](https://badges.greenkeeper.io/Level/level.svg)](https://greenkeeper.io/)
 
 This is a convenience package that bundles the current release of **[LevelUP](https://github.com/level/levelup)** and **[LevelDOWN](https://github.com/level/leveldown)** and exposes LevelUP on its export.
 
