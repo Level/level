@@ -37,10 +37,11 @@
     "leveldown": "~2.0.0"
   },
   "devDependencies": {
+    "standard": "^10.0.3",
     "tape": "^4.2.2"
   },
   "scripts": {
-    "test": "node ./test.js"
+    "test": "standard && node test.js"
   },
   "license": "MIT"
 }

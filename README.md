@@ -5,7 +5,10 @@ Level
 
 **Fast & simple storage - a Node.js-style LevelDB wrapper**
 
-[![Build Status](https://secure.travis-ci.org/Level/level.png)](http://travis-ci.org/Level/level) [![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level) [![Greenkeeper badge](https://badges.greenkeeper.io/Level/level.svg)](https://greenkeeper.io/)
+[![Build Status](https://secure.travis-ci.org/Level/level.png)](http://travis-ci.org/Level/level)
+[![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Level/level.svg)](https://greenkeeper.io/)
 
 [![NPM](https://nodei.co/npm/level.png?stars&downloads&downloadRank)](https://nodei.co/npm/level/) [![NPM](https://nodei.co/npm-dl/level.png?months=6&height=3)](https://nodei.co/npm/level/)
 
