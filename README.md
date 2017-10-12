@@ -2,7 +2,7 @@
 
 > Fast & simple storage. A Node.js-style `LevelDB` wrapper.
 
-[![level badge](http://leveldb.org/img/badge.svg)](https://github.com/level/awesome)
+[![level badge][level-badge]](https://github.com/level/awesome)
 [![npm](https://img.shields.io/npm/v/level.svg)](https://www.npmjs.com/package/level)
 ![Node version](https://img.shields.io/node/v/level.svg)
 [![Build Status](https://secure.travis-ci.org/Level/level.png)](http://travis-ci.org/Level/level)
@@ -10,7 +10,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/dm/level.svg)](https://www.npmjs.com/package/level)
 
-A convenience package that bundles the current release of [`levelup`](https://github.com/level/levelup) and [`leveldown`](https://github.com/level/leveldown) and exposes `levelup` on its export.
+A convenience package that bundles the current release of [`levelup`][levelup] and [`leveldown`][leveldown] and exposes `levelup` on its export.
 
 Use this package to avoid having to explicitly install `leveldown` when you just want plain old `LevelDB` from `levelup`.
 
@@ -52,7 +52,7 @@ db.put('name', 'Level', function (err) {
   * <a href="#createKeyStream"><code>db.<b>createKeyStream()</b></code></a>
   * <a href="#createValueStream"><code>db.<b>createValueStream()</b></code></a>
 
-See [`levelup`](https://github.com/level/levelup) and [`leveldown`](https://github.com/level/leveldown) for more details.
+See [`levelup`][levelup] and [`leveldown`][leveldown] for more details.
 
 <a name="ctor"></a>
 ### `const db = level(location[, options[, callback]])`
@@ -159,7 +159,7 @@ Each operation is contained in an object having the following properties: `type`
 If `key` and `value` are defined but `type` is not, it will default to `'put'`.
 
 ```js
-var ops = [
+const ops = [
   { type: 'del', key: 'father' },
   { type: 'put', key: 'name', value: 'Yuri Irsenovich Kim' },
   { type: 'put', key: 'dob', value: '16 February 1941' },
@@ -395,4 +395,7 @@ Copyright (c) 2012-2017 `level` [contributors](https://github.com/level/communit
 
 `level` is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included `LICENSE.md` file for more details.
 
+[level-badge]: http://leveldb.org/img/badge.svg
+[levelup]: https://github.com/level/levelup
+[leveldown]: https://github.com/level/leveldown
 [level-codec]: https://github.com/level/codec#encodings
