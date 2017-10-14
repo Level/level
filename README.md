@@ -10,7 +10,11 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/dm/level.svg)](https://www.npmjs.com/package/level)
 
-A convenience package that bundles the current release of [`levelup`][levelup] and [`leveldown`][leveldown] and exposes `levelup` on its export.
+A convenience package that:
+
+* exports a function that returns a [`levelup instance`](https://github.com/level/levelup#ctor) when invoked
+* bundles the current release of [`levelup`][levelup] and [`leveldown`][leveldown]
+* leverages encodings using [`encoding-down`][encoding-down]
 
 Use this package to avoid having to explicitly install `leveldown` when you just want plain old `LevelDB` from `levelup`.
 
@@ -399,3 +403,4 @@ Copyright (c) 2012-2017 `level` [contributors](https://github.com/level/communit
 [levelup]: https://github.com/level/levelup
 [leveldown]: https://github.com/level/leveldown
 [level-codec]: https://github.com/level/codec#encodings
+[encoding-down]: https://github.com/level/encoding-down
