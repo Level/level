@@ -64,7 +64,7 @@ The main entry point for creating a new `levelup` instance.
 
 - `location` path to the underlying `LevelDB`.
 - `options` is passed on to the underlying store.
-- `options.keyEncoding` and `options.valueEncoding` are passed to [`level-codec`][level-codec], default encoding is `'utf8'`
+- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], default encoding is `'utf8'`
 
 Calling `level('./db')` will also open the underlying store. This is an asynchronous operation which will trigger your callback if you provide one. The callback should take the form `function (err, db) {}` where `db` is the `levelup` instance. If you don't provide a callback, any read & write operations are simply queued internally until the store is fully opened.
 
@@ -402,5 +402,4 @@ Copyright (c) 2012-2017 `level` [contributors](https://github.com/level/communit
 [level-badge]: http://leveldb.org/img/badge.svg
 [levelup]: https://github.com/level/levelup
 [leveldown]: https://github.com/level/leveldown
-[level-codec]: https://github.com/level/codec#encodings
 [encoding-down]: https://github.com/level/encoding-down
