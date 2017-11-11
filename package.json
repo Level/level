@@ -44,7 +44,7 @@
     "test": "standard && node test.js"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=4"
   },
   "license": "MIT"
 }
