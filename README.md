@@ -93,6 +93,16 @@ db.get('foo', function (err, value) {
 })
 ```
 
+The constructor function has a `.errors` property which provides access to the different error types from [`level-errors`](https://github.com/Level/errors#api). See example below on how to use it:
+
+```js
+level('./db', { createIfMissing: false }, function (err, db) {
+  if (err instanceof level.errors.OpenError) {
+    console.log('failed to open database')
+  }
+})
+```
+
 <a name="open"></a>
 ### `db.open([callback])`
 Opens the underlying store. In general you should never need to call this method directly as it's automatically called by <a href="#ctor"><code>levelup()</code></a>.
