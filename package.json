@@ -34,17 +34,24 @@
   "main": "level.js",
   "dependencies": {
     "level-packager": "^2.0.2",
-    "leveldown": "^2.1.1"
+    "leveldown": "^2.1.1",
+    "opencollective": "^1.0.3"
   },
   "devDependencies": {
     "standard": "^10.0.3",
     "tape": "^4.2.2"
   },
   "scripts": {
-    "test": "standard && node test.js"
+    "test": "standard && node test.js",
+    "postinstall": "opencollective postinstall"
   },
   "engines": {
     "node": ">=4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/level",
+    "logo": "https://opencollective.com/level/logo.txt"
+  }
 }
