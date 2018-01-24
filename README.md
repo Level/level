@@ -3,7 +3,7 @@
 > Fast & simple storage. A Node.js-style `LevelDB` wrapper.
 
 [![level badge][level-badge]](https://github.com/level/awesome)
-[![npm](https://img.shields.io/npm/v/level.svg)](https://www.npmjs.com/package/level)
+[![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/level/sponsors/badge.svg)](#sponsors) [![npm](https://img.shields.io/npm/v/level.svg)](https://www.npmjs.com/package/level)
 ![Node version](https://img.shields.io/node/v/level.svg)
 [![Build Status](https://secure.travis-ci.org/Level/level.svg)](http://travis-ci.org/Level/level)
 [![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level)
@@ -403,6 +403,35 @@ db.on('put', function (key, value) {
 See the [`CONTRIBUTING.md`](https://github.com/Level/community/blob/master/CONTRIBUTING.md) file for more details.
 
 <a name="license"></a>
+## Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="graphs/contributors"><img src="https://opencollective.com/level/contributors.svg?width=890" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/level#backer)]
+
+<a href="https://opencollective.com/level#backers" target="_blank"><img src="https://opencollective.com/level/backers.svg?width=890"></a>
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [Become a sponsor](https://opencollective.com/level#sponsor).
+
+<a href="https://opencollective.com/level/sponsor/0/website" target="_blank"><img src="https://opencollective.com/level/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/level/sponsor/1/website" target="_blank"><img src="https://opencollective.com/level/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/level/sponsor/2/website" target="_blank"><img src="https://opencollective.com/level/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/level/sponsor/3/website" target="_blank"><img src="https://opencollective.com/level/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/level/sponsor/4/website" target="_blank"><img src="https://opencollective.com/level/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/level/sponsor/5/website" target="_blank"><img src="https://opencollective.com/level/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/level/sponsor/6/website" target="_blank"><img src="https://opencollective.com/level/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/level/sponsor/7/website" target="_blank"><img src="https://opencollective.com/level/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/level/sponsor/8/website" target="_blank"><img src="https://opencollective.com/level/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/level/sponsor/9/website" target="_blank"><img src="https://opencollective.com/level/sponsor/9/avatar.svg"></a>
+
+
+
 ## License &amp; Copyright
 
 Copyright (c) 2012-2017 `level` [contributors](https://github.com/level/community#contributors).
