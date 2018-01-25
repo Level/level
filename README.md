@@ -405,7 +405,8 @@ See the [`CONTRIBUTING.md`](https://github.com/Level/community/blob/master/CONTR
 ## Contributors
 
 This project exists thanks to all the people who contribute. [Contribute](CONTRIBUTING.md).
-<a href="graphs/contributors"><img src="https://opencollective.com/level/contributors.svg?width=890" /></a>
+
+<a href="https://github.com/Level/level/graphs/contributors"><img src="https://opencollective.com/level/contributors.svg?width=890" /></a>
 
 ## Backers
 
