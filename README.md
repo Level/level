@@ -402,22 +402,15 @@ db.on('put', function (key, value) {
 
 See the [`CONTRIBUTING.md`](https://github.com/Level/community/blob/master/CONTRIBUTING.md) file for more details.
 
-<a name="license"></a>
-## Contributors
-
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="graphs/contributors"><img src="https://opencollective.com/level/contributors.svg?width=890" /></a>
-
-
 ## Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/level#backer)]
+Thank you to all our backers!
 
 <a href="https://opencollective.com/level#backers" target="_blank"><img src="https://opencollective.com/level/backers.svg?width=890"></a>
 
 ## Sponsors
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [Become a sponsor](https://opencollective.com/level#sponsor).
+Support this project by [becoming a sponsor](https://opencollective.com/level#sponsor). Your logo will show up here with a link to your website.
 
 <a href="https://opencollective.com/level/sponsor/0/website" target="_blank"><img src="https://opencollective.com/level/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/level/sponsor/1/website" target="_blank"><img src="https://opencollective.com/level/sponsor/1/avatar.svg"></a>
@@ -430,8 +423,7 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/level/sponsor/8/website" target="_blank"><img src="https://opencollective.com/level/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/level/sponsor/9/website" target="_blank"><img src="https://opencollective.com/level/sponsor/9/avatar.svg"></a>
 
-
-
+<a name="license"></a>
 ## License &amp; Copyright
 
 Copyright (c) 2012-2017 `level` [contributors](https://github.com/level/community#contributors).
