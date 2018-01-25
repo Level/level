@@ -39,7 +39,7 @@ You can also reach us at hello@level.opencollective.com.
 ### Contributors
 
 Thank you to all the people who have already contributed to level!
-<a href="graphs/contributors"><img src="https://opencollective.com/level/contributors.svg?width=890" /></a>
+<a href="https://github.com/Level/level/graphs/contributors"><img src="https://opencollective.com/level/contributors.svg?width=890" /></a>
 
 
 ### Backers
