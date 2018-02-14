@@ -3,7 +3,9 @@
 > Fast & simple storage. A Node.js-style `LevelDB` wrapper.
 
 [![level badge][level-badge]](https://github.com/level/awesome)
-[![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/level/sponsors/badge.svg)](#sponsors) [![npm](https://img.shields.io/npm/v/level.svg)](https://www.npmjs.com/package/level)
+[![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg)](#backers)
+[![Sponsors on Open Collective](https://opencollective.com/level/sponsors/badge.svg)](#sponsors)
+[![npm](https://img.shields.io/npm/v/level.svg)](https://www.npmjs.com/package/level)
 ![Node version](https://img.shields.io/node/v/level.svg)
 [![Build Status](https://secure.travis-ci.org/Level/level.svg)](http://travis-ci.org/Level/level)
 [![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level)
@@ -38,6 +40,8 @@ db.put('name', 'Level', function (err) {
   })
 })
 ```
+
+**Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
 
 <a name="api"></a>
 ## API
