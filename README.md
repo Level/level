@@ -20,6 +20,20 @@ A convenience package that:
 
 Use this package to avoid having to explicitly install `leveldown` when you just want plain old `LevelDB` from `levelup`.
 
+* [Usage](#usage)
+* [API](#api)
+* [Promise Support](#promise-support)
+* [Events](#events)
+* [Contributing](#contributing)
+* [Contributors](#contributors)
+* [Backers](#backers)
+* [Sponsors](#sponsors)
+* [License](#license)
+
+**Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
+
+## Usage
+
 ```js
 var level = require('level')
 
@@ -41,9 +55,6 @@ db.put('name', 'Level', function (err) {
 })
 ```
 
-**Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
-
-<a name="api"></a>
 ## API
 
   * <a href="#ctor"><code><b>level()</b></code></a>
@@ -336,7 +347,6 @@ db.createReadStream({ keys: false, values: true })
   })
 ```
 
-<a name="promises"></a>
 ## Promise Support
 
 `level` ships with native `Promise` support out of the box.
@@ -373,7 +383,6 @@ const main = async () => {
 }
 ```
 
-<a name="events"></a>
 ## Events
 
 `levelup` is an [`EventEmitter`](https://nodejs.org/api/events.html) and emits the following events.
@@ -397,7 +406,6 @@ db.on('put', function (key, value) {
 })
 ```
 
-<a name="contributing"></a>
 ## Contributing
 
 `level` is an **OPEN Open Source Project**. This means that:
@@ -433,9 +441,7 @@ Support this project by [becoming a sponsor](https://opencollective.com/level#sp
 <a href="https://opencollective.com/level/sponsor/8/website" target="_blank"><img src="https://opencollective.com/level/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/level/sponsor/9/website" target="_blank"><img src="https://opencollective.com/level/sponsor/9/avatar.svg"></a>
 
-
-<a name="license"></a>
-## License &amp; Copyright
+## License
 
 Copyright (c) 2012-2018 `level` [contributors](https://github.com/level/community#contributors).
 
