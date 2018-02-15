@@ -20,6 +20,8 @@ A convenience package that:
 
 Use this package to avoid having to explicitly install `leveldown` when you just want plain old `LevelDB` from `levelup`.
 
+**Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
+
 * [Usage](#usage)
 * [API](#api)
 * [Promise Support](#promise-support)
@@ -29,8 +31,6 @@ Use this package to avoid having to explicitly install `leveldown` when you just
 * [Backers](#backers)
 * [Sponsors](#sponsors)
 * [License](#license)
-
-**Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
 
 ## Usage
 
