@@ -22,6 +22,8 @@ Use this package to avoid having to explicitly install `leveldown` when you just
 
 **Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
 
+**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
+
 * [Usage](#usage)
 * [API](#api)
 * [Promise Support](#promise-support)
