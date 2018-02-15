@@ -7,3 +7,8 @@ This document describes breaking changes and how to upgrade. For a complete list
 No major changes to the API.
 
 The reasoning behind a new major is based on updating to `level-packager@~2.0.0` and `leveldown@~2.0.0`. Where a major rewrite of the `levelup` API was done. Also, encodings are now taken care of by `encoding-down`, which comes bundled inside `level-packager`. This was previously handled by `levelup`.
+
+For more information please check the corresponding `CHANGELOG.md` for:
+
+* [`level-packager`](https://github.com/Level/packager/blob/master/CHANGELOG.md)
+* [`leveldown`](https://github.com/Level/leveldown/blob/master/CHANGELOG.md)
