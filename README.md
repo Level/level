@@ -20,6 +20,20 @@ A convenience package that:
 
 Use this package to avoid having to explicitly install `leveldown` when you just want plain old `LevelDB` from `levelup`.
 
+**Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
+
+* [Usage](#usage)
+* [API](#api)
+* [Promise Support](#promise-support)
+* [Events](#events)
+* [Contributing](#contributing)
+* [Contributors](#contributors)
+* [Backers](#backers)
+* [Sponsors](#sponsors)
+* [License](#license)
+
+## Usage
+
 ```js
 var level = require('level')
 
@@ -41,24 +55,21 @@ db.put('name', 'Level', function (err) {
 })
 ```
 
-**Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
-
-<a name="api"></a>
 ## API
 
-  * <a href="#ctor"><code><b>level()</b></code></a>
-  * <a href="#open"><code>db.<b>open()</b></code></a>
-  * <a href="#close"><code>db.<b>close()</b></code></a>
-  * <a href="#put"><code>db.<b>put()</b></code></a>
-  * <a href="#get"><code>db.<b>get()</b></code></a>
-  * <a href="#del"><code>db.<b>del()</b></code></a>
-  * <a href="#batch"><code>db.<b>batch()</b></code> *(array form)*</a>
-  * <a href="#batch_chained"><code>db.<b>batch()</b></code> *(chained form)*</a>
-  * <a href="#isOpen"><code>db.<b>isOpen()</b></code></a>
-  * <a href="#isClosed"><code>db.<b>isClosed()</b></code></a>
-  * <a href="#createReadStream"><code>db.<b>createReadStream()</b></code></a>
-  * <a href="#createKeyStream"><code>db.<b>createKeyStream()</b></code></a>
-  * <a href="#createValueStream"><code>db.<b>createValueStream()</b></code></a>
+* [<code><b>level()</b></code>](#ctor)
+* [<code>db.<b>open()</b></code>](#open)
+* [<code>db.<b>close()</b></code>](#close)
+* [<code>db.<b>put()</b></code>](#put)
+* [<code>db.<b>get()</b></code>](#get)
+* [<code>db.<b>del()</b></code>](#del)
+* [<code>db.<b>batch()</b></code> *(array form)*](#batch)
+* [<code>db.<b>batch()</b></code> *(chained form)*](#batch_chained)
+* [<code>db.<b>isOpen()</b></code>](#isOpen)
+* [<code>db.<b>iClosed()</b></code>](#isClosed)
+* [<code>db.<b>createReadStream()</b></code>](#createReadStream)
+* [<code>db.<b>createKeyStream()</b></code>](#createKeyStream)
+* [<code>db.<b>createValueStream()</b></code>](#createValueStream)
 
 See [`levelup`][levelup] and [`leveldown`][leveldown] for more details.
 
@@ -336,7 +347,6 @@ db.createReadStream({ keys: false, values: true })
   })
 ```
 
-<a name="promises"></a>
 ## Promise Support
 
 `level` ships with native `Promise` support out of the box.
@@ -373,7 +383,6 @@ const main = async () => {
 }
 ```
 
-<a name="events"></a>
 ## Events
 
 `levelup` is an [`EventEmitter`](https://nodejs.org/api/events.html) and emits the following events.
@@ -397,7 +406,6 @@ db.on('put', function (key, value) {
 })
 ```
 
-<a name="contributing"></a>
 ## Contributing
 
 `level` is an **OPEN Open Source Project**. This means that:
@@ -433,9 +441,7 @@ Support this project by [becoming a sponsor](https://opencollective.com/level#sp
 <a href="https://opencollective.com/level/sponsor/8/website" target="_blank"><img src="https://opencollective.com/level/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/level/sponsor/9/website" target="_blank"><img src="https://opencollective.com/level/sponsor/9/avatar.svg"></a>
 
-
-<a name="license"></a>
-## License &amp; Copyright
+## License
 
 Copyright (c) 2012-2018 `level` [contributors](https://github.com/level/community#contributors).
 
