@@ -4,16 +4,19 @@ This document describes breaking changes and how to upgrade. For a complete list
 
 ## v2
 
-No major changes to the `level` API.
+No breaking changes to the `level` API.
 
-The reasoning behind a new major is based on updating to `level-packager@~2.0.0` and `leveldown@~2.0.0`. Where a major rewrite of the `levelup` API was done. Also, encodings are now taken care of by `encoding-down`, which comes bundled inside `level-packager`. This was previously handled by `levelup`.
+The parts that make up `level` have been refactored to increase modularity. This is an upgrade to `leveldown@~2.0.0` and `level-packager@~2.0.0`, which in turn upgraded to `levelup@^2.0.0`. The responsibility of encoding keys and values moved from [`levelup`](https://github.com/Level/levelup) to [`encoding-down`](https://github.com/Level/encoding-down), which comes bundled with [`level-packager`](https://github.com/Level/packager).
 
-Also `levelup@2.0.0` was released with native `Promise` support, so you can do e.g.:
+Being a convenience package, `level` glues the parts back together to form a drop-in replacement for the users of `levelup@1`, while staying fully compatible with `level@1`. One thing we do get for free, is native Promise support.
 
 ```js
+const db = level('db')
 await db.put('foo', 'bar')
 console.log(await db.get('foo'))
 ```
+
+This does not affect the existing callback API, functionality-wise or performance-wise.
 
 For more information please check the corresponding `CHANGELOG.md` for:
 
