@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [3.0.0] - 2018-02-17
+
 ### Added
 * Travis: add 9 (@ralphtheninja)
 * README: add table of contents (@ralphtheninja)
@@ -230,7 +232,8 @@
 
 :seedling: Initial release.
 
-[Unreleased]: https://github.com/level/level/compare/v2.1.2...HEAD
+[Unreleased]: https://github.com/level/level/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/level/level/compare/v2.1.2...v3.0.0
 [2.1.2]: https://github.com/level/level/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/level/level/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/level/level/compare/v2.0.1...v2.1.0
