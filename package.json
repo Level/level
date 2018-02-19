@@ -38,7 +38,7 @@
     "opencollective": "^1.0.3"
   },
   "devDependencies": {
-    "standard": "^10.0.3",
+    "standard": "^11.0.0",
     "tape": "^4.2.2"
   },
   "scripts": {
