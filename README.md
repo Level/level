@@ -68,7 +68,7 @@ db.put('name', 'Level', function (err) {
 * [<code>db.<b>batch()</b></code> *(array form)*](#batch)
 * [<code>db.<b>batch()</b></code> *(chained form)*](#batch_chained)
 * [<code>db.<b>isOpen()</b></code>](#isOpen)
-* [<code>db.<b>iClosed()</b></code>](#isClosed)
+* [<code>db.<b>isClosed()</b></code>](#isClosed)
 * [<code>db.<b>createReadStream()</b></code>](#createReadStream)
 * [<code>db.<b>createKeyStream()</b></code>](#createKeyStream)
 * [<code>db.<b>createValueStream()</b></code>](#createValueStream)
