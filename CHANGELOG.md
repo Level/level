@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## [3.0.1] - 2018-05-05
+
+### Added
+* Travis: add 10 (@ralphtheninja)
+
+### Changed
+* Update `standard` to `^11.0.0` (@ralphtheninja)
+* Fix typo in README (@rasmuserik)
+
+### Fixed
+* Fix postinstall failures with OpenCollective (@vweevers)
+
 ## [3.0.0] - 2018-02-17
 
 ### Added
@@ -232,7 +244,8 @@
 
 :seedling: Initial release.
 
-[Unreleased]: https://github.com/level/level/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/level/level/compare/v3.0.1...HEAD
+[3.0.1]: https://github.com/level/level/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/level/level/compare/v2.1.2...v3.0.0
 [2.1.2]: https://github.com/level/level/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/level/level/compare/v2.1.0...v2.1.1
