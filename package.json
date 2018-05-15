@@ -46,7 +46,7 @@
     "postinstall": "opencollective postinstall || exit 0"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "license": "MIT",
   "collective": {
