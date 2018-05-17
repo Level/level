@@ -34,7 +34,7 @@
   "main": "level.js",
   "dependencies": {
     "level-packager": "^2.0.2",
-    "leveldown": "^3.0.0",
+    "leveldown": "^4.0.0",
     "opencollective": "^1.0.3"
   },
   "devDependencies": {
