@@ -35,7 +35,7 @@
   "dependencies": {
     "level-packager": "^2.0.2",
     "leveldown": "^4.0.0",
-    "opencollective": "^1.0.3"
+    "opencollective-postinstall": "^2.0.0"
   },
   "devDependencies": {
     "standard": "^11.0.0",
@@ -43,7 +43,7 @@
   },
   "scripts": {
     "test": "standard && node test.js",
-    "postinstall": "opencollective postinstall || exit 0"
+    "postinstall": "opencollective-postinstall || exit 0"
   },
   "engines": {
     "node": ">=6"
