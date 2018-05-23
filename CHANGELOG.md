@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [4.0.0] - 2018-05-23
+
+### Changed
+* Update `leveldown` to `^4.0.0` (@ralphtheninja)
+* Update `level-packager` to `^3.0.0` (@ralphtheninja)
+* Switch to `opencollective-postinstall` (@mateodelnorte)
+
+### Removed
+* Remove node 4 from Travis (@ralphtheninja)
+
 ## [3.0.2] - 2018-05-23
 
 ### Changed
@@ -249,7 +259,8 @@
 
 :seedling: Initial release.
 
-[Unreleased]: https://github.com/level/level/compare/v3.0.1...HEAD
+[Unreleased]: https://github.com/level/level/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/level/level/compare/v3.0.1...v4.0.0
 [3.0.2]: https://github.com/level/level/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/level/level/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/level/level/compare/v2.1.2...v3.0.0
