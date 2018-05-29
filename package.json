@@ -39,10 +39,11 @@
   },
   "devDependencies": {
     "standard": "^11.0.0",
-    "tape": "^4.2.2"
+    "tape": "^4.2.2",
+    "verify-travis-appveyor": "^3.0.0"
   },
   "scripts": {
-    "test": "standard && node test.js",
+    "test": "standard && node test.js && verify-travis-appveyor",
     "postinstall": "opencollective-postinstall || exit 0"
   },
   "engines": {
