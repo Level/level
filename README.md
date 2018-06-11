@@ -446,7 +446,7 @@ Support this project by [becoming a sponsor](https://opencollective.com/level#sp
 
 ## License
 
-Copyright (c) 2012-2018 `level` [contributors](https://github.com/level/community#contributors).
+Copyright (c) 2012-present `level` [contributors](https://github.com/level/community#contributors).
 
 `level` is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included `LICENSE.md` file for more details.
 
