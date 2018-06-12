@@ -33,7 +33,7 @@
   ],
   "main": "level.js",
   "dependencies": {
-    "level-packager": "^3.0.0",
+    "level-packager": "^4.0.0",
     "leveldown": "^4.0.0",
     "opencollective-postinstall": "^2.0.0"
   },
