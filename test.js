@@ -1,1 +1,1 @@
-require('level-packager/test')(require('tape'), require('./'))
+require('level-packager/abstract/test')(require('tape'), require('./'))
