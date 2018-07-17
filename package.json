@@ -23,12 +23,15 @@
     "opencollective-postinstall": "^2.0.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
+    "nyc": "^12.0.2",
     "standard": "^11.0.0",
     "tape": "^4.2.2",
     "verify-travis-appveyor": "^3.0.0"
   },
   "scripts": {
-    "test": "standard && node test.js && verify-travis-appveyor",
+    "test": "standard && nyc node test.js && verify-travis-appveyor",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "postinstall": "opencollective-postinstall || exit 0"
   },
   "engines": {

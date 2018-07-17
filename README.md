@@ -10,6 +10,7 @@
 [![Travis](https://img.shields.io/travis/Level/level.svg?label=travis)](http://travis-ci.org/Level/level)
 [![AppVeyor](https://img.shields.io/appveyor/ci/Level/level.svg?label=appveyor)](https://ci.appveyor.com/project/Level/level)
 [![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level)
+[![Coverage Status](https://coveralls.io/repos/github/Level/level/badge.svg)](https://coveralls.io/github/Level/level)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/dm/level.svg)](https://www.npmjs.com/package/level)
 
