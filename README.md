@@ -78,7 +78,7 @@ db.put('name', 'Level', function (err) {
 See [`levelup`][levelup] and [`leveldown`][leveldown] for more details.
 
 <a name="ctor"></a>
-### `const db = level(location[, options[, callback]])`
+### `db = level(location[, options[, callback]])`
 The main entry point for creating a new `levelup` instance.
 
 - `location` path to the underlying `LevelDB`.
@@ -104,7 +104,7 @@ Versus the equivalent:
 
 ```js
 // Will throw if an error occurs
-const db = level(location, options)
+var db = level(location, options)
 
 db.get('foo', function (err, value) {
   if (err) return console.log('foo does not exist')
@@ -192,7 +192,7 @@ Each operation is contained in an object having the following properties: `type`
 If `key` and `value` are defined but `type` is not, it will default to `'put'`.
 
 ```js
-const ops = [
+var ops = [
   { type: 'del', key: 'father' },
   { type: 'put', key: 'name', value: 'Yuri Irsenovich Kim' },
   { type: 'put', key: 'dob', value: '16 February 1941' },
@@ -368,7 +368,7 @@ The only exception is the `level` constructor itself, which if no callback is pa
 Example:
 
 ```js
-const db = level('./my-db')
+var db = level('./my-db')
 
 db.put('foo', 'bar')
   .then(function () { return db.get('foo') })
@@ -379,8 +379,8 @@ db.put('foo', 'bar')
 Or using `async/await`:
 
 ```js
-const main = async () => {
-  const db = level('./my-db')
+var main = async () => {
+  var db = level('./my-db')
 
   await db.put('foo', 'bar')
   console.log(await db.get('foo'))
