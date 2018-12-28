@@ -2,6 +2,12 @@
 
 This document describes breaking changes and how to upgrade. For a complete list of changes including minor and patch releases, please refer to the [changelog](CHANGELOG.md).
 
+## v5
+
+_Currently available as prerelease: `npm i level@next`._
+
+Upgraded to [`leveldown@5.0.0-1`](https://github.com/Level/leveldown/blob/v5.0.0-1/UPGRADING.md#v500-rc1) and (through `level-packager@6`) [`levelup@4`](https://github.com/Level/levelup/blob/v4.0.0/UPGRADING.md#v4) and [`encoding-down@6`](https://github.com/Level/encoding-down/blob/v6.0.0/UPGRADING.md#v6). Please follow the earlier links for more information.
+
 ## v4
 
 Dropped support for node 4. No other breaking changes.
