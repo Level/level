@@ -30,6 +30,6 @@ This does not affect the existing callback API, functionality-wise or performanc
 
 For more information please check the corresponding `CHANGELOG.md` for:
 
-* [`levelup`](https://github.com/Level/levelup/blob/master/CHANGELOG.md)
-* [`leveldown`](https://github.com/Level/leveldown/blob/master/CHANGELOG.md)
-* [`level-packager`](https://github.com/Level/packager/blob/master/CHANGELOG.md)
+- [`levelup`](https://github.com/Level/levelup/blob/master/CHANGELOG.md)
+- [`leveldown`](https://github.com/Level/leveldown/blob/master/CHANGELOG.md)
+- [`level-packager`](https://github.com/Level/packager/blob/master/CHANGELOG.md)
