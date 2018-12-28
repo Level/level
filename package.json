@@ -19,7 +19,7 @@
   "main": "level.js",
   "dependencies": {
     "level-packager": "^5.0.0",
-    "leveldown": "^4.0.0",
+    "leveldown": "^5.0.0-1",
     "opencollective-postinstall": "^2.0.0"
   },
   "devDependencies": {
