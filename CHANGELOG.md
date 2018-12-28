@@ -2,6 +2,25 @@
 
 ## [Unreleased]
 
+### Changed
+
+* Upgrade `leveldown` from `^4.0.0` to `^5.0.0-1` (#133) (@vweevers)
+* Upgrade `level-packager` from `^3.0.0` to `^5.0.0` (#113, #131) (@ralphtheninja, @vweevers)
+* Prefer `var` over `const` in README (f032b6c) (@ralphtheninja)
+* Upgrade `standard` devDependency from `^11.0.0` to `^12.0.0` (#118) (@ralphtheninja)
+* Tweak copyright years for less maintenance (0b9c8ad) (@ralphtheninja)
+
+### Added
+
+* Add appveyor (#112) (@ralphtheninja)
+* Enable OSX on Travis (#111) (@ralphtheninja)
+* Add `nyc` and `coveralls` (#115) (@ralphtheninja)
+
+### Removed
+
+* Remove node 6 and 9 (#129, 2bf1d3f) (@ralphtheninja)
+* Remove contributors from `package.json` (f37252d) (@ralphtheninja)
+
 ## [4.0.0] - 2018-05-23
 
 ### Changed
@@ -294,4 +313,3 @@
 [0.11.0]: https://github.com/level/level/compare/0.10.0...0.11.0
 [0.10.0]: https://github.com/level/level/compare/0.9.0...0.10.0
 [0.9.0]: https://github.com/level/level/compare/0.8.0...0.9.0
-
