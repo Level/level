@@ -27,6 +27,7 @@
   "devDependencies": {
     "airtap": "^2.0.1",
     "coveralls": "^3.0.2",
+    "hallmark": "^0.1.0",
     "nyc": "^12.0.2",
     "pinkie": "^2.0.4",
     "standard": "^12.0.0",
@@ -38,7 +39,8 @@
     "test": "standard && nyc node test.js && verify-travis-appveyor",
     "test-browser-local": "airtap --local test-browser.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "postinstall": "opencollective-postinstall || exit 0"
+    "postinstall": "opencollective-postinstall || exit 0",
+    "hallmark": "hallmark --fix CHANGELOG.md UPGRADING.md"
   },
   "engines": {
     "node": ">=8.6.0"

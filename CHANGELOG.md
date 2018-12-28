@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [Unreleased][unreleased]
 
 ### Changed
 
@@ -14,7 +14,8 @@
 
 * Add appveyor (#112) (@ralphtheninja)
 * Enable OSX on Travis (#111) (@ralphtheninja)
-* Add `nyc` and `coveralls` (#115) (@ralphtheninja)
+* Add `nyc` and `coveralls` devDependencies (#115) (@ralphtheninja)
+* Add `hallmark` devDependency (@vweevers)
 
 ### Removed
 
@@ -278,7 +279,7 @@
 
 :seedling: Initial release.
 
-[Unreleased]: https://github.com/level/level/compare/v4.0.0...HEAD
+[unreleased]: https://github.com/level/level/compare/v4.0.0...HEAD
 [4.0.0]: https://github.com/level/level/compare/v3.0.1...v4.0.0
 [3.0.2]: https://github.com/level/level/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/level/level/compare/v3.0.0...v3.0.1
