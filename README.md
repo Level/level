@@ -51,7 +51,7 @@ Use this package to avoid having to explicitly install `leveldown` and/or `level
 var level = require('level')
 
 // 1) Create our database, supply location and options.
-//    This will create or open the underlying LevelDB store.
+//    This will create or open the underlying store.
 var db = level('./mydb')
 
 // 2) Put a key & value
