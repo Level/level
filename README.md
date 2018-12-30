@@ -1,6 +1,6 @@
 # level
 
-> Fast & simple storage. A Node.js-style `LevelDB` wrapper.
+> Fast & simple storage. A Node.js-style `LevelDB` wrapper for Node.js, Electron and browsers.
 
 [![level badge][level-badge]](https://github.com/level/awesome)
 [![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg)](#backers)
@@ -14,19 +14,14 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/dm/level.svg)](https://www.npmjs.com/package/level)
 
-A convenience package that:
+## Table of Contents
 
-* exports a function that returns a [`levelup instance`](https://github.com/level/levelup#ctor) when invoked
-* bundles the current release of [`levelup`][levelup] and [`leveldown`][leveldown]
-* leverages encodings using [`encoding-down`][encoding-down]
+<details>
+<summary>Click to expand</summary>
 
-Use this package to avoid having to explicitly install `leveldown` when you just want plain old `LevelDB` from `levelup`.
-
-**Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
-
-**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
-
+* [Introduction](#introduction)
 * [Usage](#usage)
+* [Supported Platforms](#supported-platforms)
 * [API](#api)
 * [Promise Support](#promise-support)
 * [Events](#events)
@@ -36,7 +31,21 @@ Use this package to avoid having to explicitly install `leveldown` when you just
 * [Sponsors](#sponsors)
 * [License](#license)
 
+</details>
+
+## Introduction
+
+This is a convenience package that:
+
+* exports a function that returns a [`levelup`](https://github.com/level/levelup#ctor) instance when invoked
+* bundles the current release of [`leveldown`][leveldown] and [`level-js`][level-js]
+* leverages encodings using [`encoding-down`][encoding-down].
+
+Use this package to avoid having to explicitly install `leveldown` and/or `level-js` when you just want to use `levelup`. It uses `leveldown` in Node.js or Electron and `level-js` in browsers (when bundled by [`browserify`](https://github.com/browserify/browserify) or similar).
+
 ## Usage
+
+**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
 
 ```js
 var level = require('level')
@@ -58,6 +67,14 @@ db.put('name', 'Level', function (err) {
   })
 })
 ```
+
+## Supported Platforms
+
+At the time of writing, `level` works in Node.js 8+ and Electron 3+ on Linux, Mac OS, Windows and FreeBSD, including any future Node.js and Electron release thanks to [N-API](https://nodejs.org/api/n-api.html), including ARM platforms like Raspberry Pi and Android, as well as in Chrome, Firefox, IE 11, Edge, Safari, iPhone and Chrome for Android. For details, see [Supported Platforms](https://github.com/Level/leveldown#supported-platforms) of `leveldown` and [Browser Support](https://github.com/Level/level-js#browser-support) of `level-js`.
+
+Though `leveldown` and `level-js` have subtle differences in type handling, `level` negates this by transparently wrapping both with [`encoding-down`](https://github.com/Level/encoding-down). If you want to support all possible runtime environments, stick to string keys with encodings like the default `utf8`. Binary values are supported across the board; in browsers that support [IndexedDB Second Edition](https://www.w3.org/TR/IndexedDB-2/) (like Chrome and Firefox) you can also use binary keys.
+
+If you want to use [Promises](#promise-support), you will need a polyfill like [`pinkie`](https://github.com/floatdrop/pinkie) in older browsers like IE.
 
 ## API
 
@@ -454,4 +471,5 @@ Copyright (c) 2012-present `level` [contributors](https://github.com/level/commu
 [level-badge]: http://leveldb.org/img/badge.svg
 [levelup]: https://github.com/level/levelup
 [leveldown]: https://github.com/level/leveldown
+[level-js]: https://github.com/level/level-js
 [encoding-down]: https://github.com/level/encoding-down
