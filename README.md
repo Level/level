@@ -78,6 +78,8 @@ If you want to use [Promises](#promise-support), you will need a polyfill like [
 
 ## API
 
+For options specific to [`leveldown`][leveldown] and [`level-js`][level-js] ("underlying store" from here on out), please see their respective READMEs.
+
 * [<code><b>level()</b></code>](#ctor)
 * [<code>db.<b>open()</b></code>](#open)
 * [<code>db.<b>close()</b></code>](#close)
@@ -92,13 +94,11 @@ If you want to use [Promises](#promise-support), you will need a polyfill like [
 * [<code>db.<b>createKeyStream()</b></code>](#createKeyStream)
 * [<code>db.<b>createValueStream()</b></code>](#createValueStream)
 
-See [`levelup`][levelup] and [`leveldown`][leveldown] for more details.
-
 <a name="ctor"></a>
 ### `db = level(location[, options[, callback]])`
 The main entry point for creating a new `levelup` instance.
 
-- `location` path to the underlying `LevelDB`.
+- `location` is a string pointing to the LevelDB location to be opened or in browsers, the name of the [`IDBDatabase`](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase) to be opened.
 - `options` is passed on to the underlying store.
 - `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], default encoding is `'utf8'`
 
@@ -139,6 +139,8 @@ level('./db', { createIfMissing: false }, function (err, db) {
 })
 ```
 
+Note that `createIfMissing` is an option specific to [`leveldown`][leveldown].
+
 <a name="open"></a>
 ### `db.open([callback])`
 Opens the underlying store. In general you should never need to call this method directly as it's automatically called by <a href="#ctor"><code>levelup()</code></a>.
@@ -159,7 +161,8 @@ If no callback is passed, a promise is returned.
 ### `db.put(key, value[, options][, callback])`
 <code>put()</code> is the primary method for inserting data into the store. Both `key` and `value` can be of any type as far as `levelup` is concerned.
 
-`options` is passed on to the underlying store.
+- `options` is passed on to the underlying store
+- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding for this `put` operation.
 
 If no callback is passed, a promise is returned.
 
@@ -182,7 +185,8 @@ db.get('foo', function (err, value) {
 })
 ```
 
-`options` is passed on to the underlying store.
+- `options` is passed on to the underlying store.
+- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding for this `get` operation.
 
 If no callback is passed, a promise is returned.
 
@@ -196,7 +200,8 @@ db.del('foo', function (err) {
 });
 ```
 
-`options` is passed on to the underlying store.
+- `options` is passed on to the underlying store.
+- `options.keyEncoding` is passed to [`encoding-down`][encoding-down], allowing you to override the key encoding for this `del` operation.
 
 If no callback is passed, a promise is returned.
 
@@ -223,7 +228,8 @@ db.batch(ops, function (err) {
 })
 ```
 
-`options` is passed on to the underlying store.
+- `options` is passed on to the underlying store.
+- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding of operations in this batch.
 
 If no callback is passed, a promise is returned.
 
@@ -261,9 +267,12 @@ Clear all queued operations on the current batch, any previous operations will b
 
 The number of queued operations on the current batch.
 
-<b><code>batch.write([callback])</code></b>
+<b><code>batch.write([options][, callback])</code></b>
 
 Commit the queued operations for this batch. All operations not *cleared* will be written to the underlying store atomically, that is, they will either all succeed or fail with no partial commits.
+
+- `options` is passed on to the underlying store.
+- `options.keyEncoding` and `options.valueEncoding` are not supported here.
 
 If no callback is passed, a promise is returned.
 
@@ -282,8 +291,6 @@ A `levelup` instance can be in one of the following states:
 
 <a name="isClosed"></a>
 ### `db.isClosed()`
-
-*See <a href="#put"><code>isOpen()</code></a>*
 
 `isClosed()` will return `true` only when the state is "closing" *or* "closed", it can be useful for determining if read and write operations are permissible.
 
@@ -328,6 +335,8 @@ Legacy options:
 
 * `end`: instead use `lte`
 
+Underlying stores may have additional options.
+
 <a name="createKeyStream"></a>
 ### `db.createKeyStream([options])`
 
@@ -370,7 +379,7 @@ db.createReadStream({ keys: false, values: true })
 
 ## Promise Support
 
-`level` ships with native `Promise` support out of the box.
+`level(up)` ships with native `Promise` support out of the box.
 
 Each function taking a callback also can be used as a promise, if the callback is omitted. This applies for:
 
