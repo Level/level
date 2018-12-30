@@ -6,7 +6,13 @@ This document describes breaking changes and how to upgrade. For a complete list
 
 _Currently available as prerelease: `npm i level@next`._
 
-Upgraded to [`leveldown@5.0.0-1`](https://github.com/Level/leveldown/blob/v5.0.0-1/UPGRADING.md#v500-rc1) and (through `level-packager@6`) [`levelup@4`](https://github.com/Level/levelup/blob/v4.0.0/UPGRADING.md#v4) and [`encoding-down@6`](https://github.com/Level/encoding-down/blob/v6.0.0/UPGRADING.md#v6). Please follow these links for more information.
+Upgraded to [`leveldown@5.0.0-1`](https://github.com/Level/leveldown/blob/v5.0.0-1/UPGRADING.md#v500-rc1) and (through `level-packager@6`) [`levelup@4`](https://github.com/Level/levelup/blob/v4.0.0/UPGRADING.md#v4) and [`encoding-down@6`](https://github.com/Level/encoding-down/blob/v6.0.0/UPGRADING.md#v6). Please follow these links for more information. A quick summary: range options (e.g. `gt`) are now serialized the same as keys, `{ gt: undefined }` is not the same as `{}`, nullish values are now rejected and streams are backed by [`readable-stream@3`](https://github.com/nodejs/readable-stream#version-3xx).
+
+In addition, `level` got browser support! It uses [`leveldown`](https://github.com/Level/leveldown) in node and [`level-js`](https://github.com/Level/level-js) in browsers (backed by [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)). As such, [`level-browserify`](https://github.com/Level/level-browserify) is not needed anymore and will be deprecated later on.
+
+This means `level` now works in Node.js 8+ and Electron 3+ on Linux, Mac OS, Windows and FreeBSD, including any future Node.js and Electron release thanks to [N-API](https://nodejs.org/api/n-api.html), including ARM platforms like Raspberry Pi and Android ([prebuilt binaries coming soon](https://github.com/Level/leveldown/issues/575)), as well as in Chrome, Firefox, IE 11, Edge, Safari, iPhone and Chrome for Android.
+
+Though `leveldown` and `level-js` have subtle differences in type handling, `level` negates this by transparently wrapping both with [`encoding-down`](https://github.com/Level/encoding-down). If you want to support all possible runtime environments, stick to string keys with encodings like the default `utf8`. Binary values are supported across the board; in browsers that support [IndexedDB Second Edition](https://www.w3.org/TR/IndexedDB-2/) (like Chrome and Firefox) you can also use binary keys.
 
 ## v4
 
