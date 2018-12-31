@@ -12,10 +12,11 @@
 
 ### Added
 
+- Integrate `level-js` for browser support ([#135](https://github.com/Level/level/issues/135)) ([**@vweevers**](https://github.com/vweevers))
 - Add appveyor ([#112](https://github.com/Level/level/issues/112)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
 - Enable OSX on Travis ([#111](https://github.com/Level/level/issues/111)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
 - Add `nyc` and `coveralls` devDependencies ([#115](https://github.com/Level/level/issues/115)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
-- Add `hallmark` devDependency ([**@vweevers**](https://github.com/vweevers))
+- Add `hallmark` devDependency ([#134](https://github.com/Level/level/issues/134)) ([**@vweevers**](https://github.com/vweevers))
 
 ### Removed
 
