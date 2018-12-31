@@ -1,7 +1,7 @@
 {
   "name": "level",
   "description": "Fast & simple storage - a Node.js-style LevelDB wrapper (a convenience package bundling LevelUP & LevelDOWN)",
-  "version": "4.0.0",
+  "version": "5.0.0-0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Level/level.git"
