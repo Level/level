@@ -1,2 +1,4 @@
 .nyc_output/
 .github/ISSUE_TEMPLATE.md
+.travis.yml
+appveyor.yml
