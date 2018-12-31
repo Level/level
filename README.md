@@ -1,6 +1,6 @@
 # level
 
-> Fast & simple storage. A Node.js-style `LevelDB` wrapper.
+> Fast & simple storage. A Node.js-style `LevelDB` wrapper for Node.js, Electron and browsers.
 
 [![level badge][level-badge]](https://github.com/level/awesome)
 [![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg)](#backers)
@@ -14,19 +14,14 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/dm/level.svg)](https://www.npmjs.com/package/level)
 
-A convenience package that:
+## Table of Contents
 
-* exports a function that returns a [`levelup instance`](https://github.com/level/levelup#ctor) when invoked
-* bundles the current release of [`levelup`][levelup] and [`leveldown`][leveldown]
-* leverages encodings using [`encoding-down`][encoding-down]
+<details>
+<summary>Click to expand</summary>
 
-Use this package to avoid having to explicitly install `leveldown` when you just want plain old `LevelDB` from `levelup`.
-
-**Note** that `level` only supports Node.js. There is ongoing work to make it work in both Node.js and in the browser. In the meantime, we suggest you to use [`level-browserify`](https://github.com/level/level-browserify).
-
-**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
-
+* [Introduction](#introduction)
 * [Usage](#usage)
+* [Supported Platforms](#supported-platforms)
 * [API](#api)
 * [Promise Support](#promise-support)
 * [Events](#events)
@@ -36,14 +31,28 @@ Use this package to avoid having to explicitly install `leveldown` when you just
 * [Sponsors](#sponsors)
 * [License](#license)
 
+</details>
+
+## Introduction
+
+This is a convenience package that:
+
+* exports a function that returns a [`levelup`](https://github.com/level/levelup#ctor) instance when invoked
+* bundles the current release of [`leveldown`][leveldown] and [`level-js`][level-js]
+* leverages encodings using [`encoding-down`][encoding-down].
+
+Use this package to avoid having to explicitly install `leveldown` and/or `level-js` when you just want to use `levelup`. It uses `leveldown` in Node.js or Electron and `level-js` in browsers (when bundled by [`browserify`](https://github.com/browserify/browserify) or similar).
+
 ## Usage
+
+**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
 
 ```js
 var level = require('level')
 
 // 1) Create our database, supply location and options.
-//    This will create or open the underlying LevelDB store.
-var db = level('./mydb')
+//    This will create or open the underlying store.
+var db = level('my-db')
 
 // 2) Put a key & value
 db.put('name', 'Level', function (err) {
@@ -59,7 +68,17 @@ db.put('name', 'Level', function (err) {
 })
 ```
 
+## Supported Platforms
+
+At the time of writing, `level` works in Node.js 8+ and Electron 3+ on Linux, Mac OS, Windows and FreeBSD, including any future Node.js and Electron release thanks to [N-API](https://nodejs.org/api/n-api.html), including ARM platforms like Raspberry Pi and Android, as well as in Chrome, Firefox, IE 11, Edge, Safari, iPhone and Chrome for Android. For details, see [Supported Platforms](https://github.com/Level/leveldown#supported-platforms) of `leveldown` and [Browser Support](https://github.com/Level/level-js#browser-support) of `level-js`.
+
+Though `leveldown` and `level-js` have subtle differences in type handling, `level` negates this by transparently wrapping both with [`encoding-down`](https://github.com/Level/encoding-down). If you want to support all possible runtime environments, stick to string keys with encodings like the default `utf8`. Binary values are supported across the board; in browsers that support [IndexedDB Second Edition](https://www.w3.org/TR/IndexedDB-2/) (like Chrome and Firefox) you can also use binary keys.
+
+If you want to use [Promises](#promise-support), you will need a polyfill like [`pinkie`](https://github.com/floatdrop/pinkie) in older browsers like IE.
+
 ## API
+
+For options specific to [`leveldown`][leveldown] and [`level-js`][level-js] ("underlying store" from here on out), please see their respective READMEs.
 
 * [<code><b>level()</b></code>](#ctor)
 * [<code>db.<b>open()</b></code>](#open)
@@ -75,17 +94,15 @@ db.put('name', 'Level', function (err) {
 * [<code>db.<b>createKeyStream()</b></code>](#createKeyStream)
 * [<code>db.<b>createValueStream()</b></code>](#createValueStream)
 
-See [`levelup`][levelup] and [`leveldown`][leveldown] for more details.
-
 <a name="ctor"></a>
 ### `db = level(location[, options[, callback]])`
 The main entry point for creating a new `levelup` instance.
 
-- `location` path to the underlying `LevelDB`.
+- `location` is a string pointing to the LevelDB location to be opened or in browsers, the name of the [`IDBDatabase`](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase) to be opened.
 - `options` is passed on to the underlying store.
 - `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], default encoding is `'utf8'`
 
-Calling `level('./db')` will also open the underlying store. This is an asynchronous operation which will trigger your callback if you provide one. The callback should take the form `function (err, db) {}` where `db` is the `levelup` instance. If you don't provide a callback, any read & write operations are simply queued internally until the store is fully opened.
+Calling `level('my-db')` will also open the underlying store. This is an asynchronous operation which will trigger your callback if you provide one. The callback should take the form `function (err, db) {}` where `db` is the `levelup` instance. If you don't provide a callback, any read & write operations are simply queued internally until the store is fully opened.
 
 This leads to two alternative ways of managing a `levelup` instance:
 
@@ -115,12 +132,14 @@ db.get('foo', function (err, value) {
 The constructor function has a `.errors` property which provides access to the different error types from [`level-errors`](https://github.com/Level/errors#api). See example below on how to use it:
 
 ```js
-level('./db', { createIfMissing: false }, function (err, db) {
+level('my-db', { createIfMissing: false }, function (err, db) {
   if (err instanceof level.errors.OpenError) {
     console.log('failed to open database')
   }
 })
 ```
+
+Note that `createIfMissing` is an option specific to [`leveldown`][leveldown].
 
 <a name="open"></a>
 ### `db.open([callback])`
@@ -142,7 +161,8 @@ If no callback is passed, a promise is returned.
 ### `db.put(key, value[, options][, callback])`
 <code>put()</code> is the primary method for inserting data into the store. Both `key` and `value` can be of any type as far as `levelup` is concerned.
 
-`options` is passed on to the underlying store.
+- `options` is passed on to the underlying store
+- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding for this `put` operation.
 
 If no callback is passed, a promise is returned.
 
@@ -165,7 +185,8 @@ db.get('foo', function (err, value) {
 })
 ```
 
-`options` is passed on to the underlying store.
+- `options` is passed on to the underlying store.
+- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding for this `get` operation.
 
 If no callback is passed, a promise is returned.
 
@@ -179,7 +200,8 @@ db.del('foo', function (err) {
 });
 ```
 
-`options` is passed on to the underlying store.
+- `options` is passed on to the underlying store.
+- `options.keyEncoding` is passed to [`encoding-down`][encoding-down], allowing you to override the key encoding for this `del` operation.
 
 If no callback is passed, a promise is returned.
 
@@ -188,8 +210,6 @@ If no callback is passed, a promise is returned.
 <code>batch()</code> can be used for very fast bulk-write operations (both *put* and *delete*). The `array` argument should contain a list of operations to be executed sequentially, although as a whole they are performed as an atomic operation inside the underlying store.
 
 Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the *type* is either `'put'` or `'del'`. In the case of `'del'` the `value` property is ignored. Any entries with a `key` of `null` or `undefined` will cause an error to be returned on the `callback` and any `type: 'put'` entry with a `value` of `null` or `undefined` will return an error.
-
-If `key` and `value` are defined but `type` is not, it will default to `'put'`.
 
 ```js
 var ops = [
@@ -206,7 +226,8 @@ db.batch(ops, function (err) {
 })
 ```
 
-`options` is passed on to the underlying store.
+- `options` is passed on to the underlying store.
+- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding of operations in this batch.
 
 If no callback is passed, a promise is returned.
 
@@ -244,9 +265,12 @@ Clear all queued operations on the current batch, any previous operations will b
 
 The number of queued operations on the current batch.
 
-<b><code>batch.write([callback])</code></b>
+<b><code>batch.write([options][, callback])</code></b>
 
 Commit the queued operations for this batch. All operations not *cleared* will be written to the underlying store atomically, that is, they will either all succeed or fail with no partial commits.
+
+- `options` is passed on to the underlying store.
+- `options.keyEncoding` and `options.valueEncoding` are not supported here.
 
 If no callback is passed, a promise is returned.
 
@@ -265,8 +289,6 @@ A `levelup` instance can be in one of the following states:
 
 <a name="isClosed"></a>
 ### `db.isClosed()`
-
-*See <a href="#put"><code>isOpen()</code></a>*
 
 `isClosed()` will return `true` only when the state is "closing" *or* "closed", it can be useful for determining if read and write operations are permissible.
 
@@ -311,6 +333,8 @@ Legacy options:
 
 * `end`: instead use `lte`
 
+Underlying stores may have additional options.
+
 <a name="createKeyStream"></a>
 ### `db.createKeyStream([options])`
 
@@ -353,7 +377,7 @@ db.createReadStream({ keys: false, values: true })
 
 ## Promise Support
 
-`level` ships with native `Promise` support out of the box.
+`level(up)` ships with native `Promise` support out of the box.
 
 Each function taking a callback also can be used as a promise, if the callback is omitted. This applies for:
 
@@ -368,7 +392,7 @@ The only exception is the `level` constructor itself, which if no callback is pa
 Example:
 
 ```js
-var db = level('./my-db')
+var db = level('my-db')
 
 db.put('foo', 'bar')
   .then(function () { return db.get('foo') })
@@ -380,7 +404,7 @@ Or using `async/await`:
 
 ```js
 var main = async () => {
-  var db = level('./my-db')
+  var db = level('my-db')
 
   await db.put('foo', 'bar')
   console.log(await db.get('foo'))
@@ -454,4 +478,5 @@ Copyright (c) 2012-present `level` [contributors](https://github.com/level/commu
 [level-badge]: http://leveldb.org/img/badge.svg
 [levelup]: https://github.com/level/levelup
 [leveldown]: https://github.com/level/leveldown
+[level-js]: https://github.com/level/level-js
 [encoding-down]: https://github.com/level/encoding-down
