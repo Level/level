@@ -52,7 +52,7 @@ var level = require('level')
 
 // 1) Create our database, supply location and options.
 //    This will create or open the underlying store.
-var db = level('./mydb')
+var db = level('my-db')
 
 // 2) Put a key & value
 db.put('name', 'Level', function (err) {
@@ -102,7 +102,7 @@ The main entry point for creating a new `levelup` instance.
 - `options` is passed on to the underlying store.
 - `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], default encoding is `'utf8'`
 
-Calling `level('./db')` will also open the underlying store. This is an asynchronous operation which will trigger your callback if you provide one. The callback should take the form `function (err, db) {}` where `db` is the `levelup` instance. If you don't provide a callback, any read & write operations are simply queued internally until the store is fully opened.
+Calling `level('my-db')` will also open the underlying store. This is an asynchronous operation which will trigger your callback if you provide one. The callback should take the form `function (err, db) {}` where `db` is the `levelup` instance. If you don't provide a callback, any read & write operations are simply queued internally until the store is fully opened.
 
 This leads to two alternative ways of managing a `levelup` instance:
 
@@ -132,7 +132,7 @@ db.get('foo', function (err, value) {
 The constructor function has a `.errors` property which provides access to the different error types from [`level-errors`](https://github.com/Level/errors#api). See example below on how to use it:
 
 ```js
-level('./db', { createIfMissing: false }, function (err, db) {
+level('my-db', { createIfMissing: false }, function (err, db) {
   if (err instanceof level.errors.OpenError) {
     console.log('failed to open database')
   }
@@ -392,7 +392,7 @@ The only exception is the `level` constructor itself, which if no callback is pa
 Example:
 
 ```js
-var db = level('./my-db')
+var db = level('my-db')
 
 db.put('foo', 'bar')
   .then(function () { return db.get('foo') })
@@ -404,7 +404,7 @@ Or using `async/await`:
 
 ```js
 var main = async () => {
-  var db = level('./my-db')
+  var db = level('my-db')
 
   await db.put('foo', 'bar')
   console.log(await db.get('foo'))
