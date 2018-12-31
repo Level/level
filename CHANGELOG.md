@@ -1,5 +1,7 @@
 # Changelog
 
+If you are upgrading, please see the [upgrade guide](UPGRADING.md).
+
 ## [Unreleased][unreleased]
 
 ### Changed
