@@ -3,16 +3,15 @@
 > Fast & simple storage. A Node.js-style `LevelDB` wrapper for Node.js, Electron and browsers.
 
 [![level badge][level-badge]](https://github.com/level/awesome)
-[![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg)](#backers)
-[![Sponsors on Open Collective](https://opencollective.com/level/sponsors/badge.svg)](#sponsors)
-[![npm](https://img.shields.io/npm/v/level.svg)](https://www.npmjs.com/package/level)
-![Node version](https://img.shields.io/node/v/level.svg)
-[![Travis](https://img.shields.io/travis/Level/level.svg?label=travis)](http://travis-ci.org/Level/level)
-[![AppVeyor](https://img.shields.io/appveyor/ci/Level/level.svg?label=appveyor)](https://ci.appveyor.com/project/Level/level)
-[![dependencies](https://david-dm.org/Level/level.svg)](https://david-dm.org/level/level)
+[![npm](https://img.shields.io/npm/v/level.svg?label=&logo=npm)](https://www.npmjs.com/package/level)
+[![Node version](https://img.shields.io/node/v/level.svg)](https://www.npmjs.com/package/level)
+[![Travis](https://img.shields.io/travis/Level/level.svg?logo=travis&label=)](http://travis-ci.org/Level/level)
+[![AppVeyor](https://img.shields.io/appveyor/ci/Level/level.svg?logo=appveyor&label=)](https://ci.appveyor.com/project/Level/level)
 [![Coverage Status](https://coveralls.io/repos/github/Level/level/badge.svg)](https://coveralls.io/github/Level/level)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![npm](https://img.shields.io/npm/dm/level.svg)](https://www.npmjs.com/package/level)
+[![npm](https://img.shields.io/npm/dm/level.svg?label=dl)](https://www.npmjs.com/package/level)
+[![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg?color=orange)](#backers)
+[![Sponsors on Open Collective](https://opencollective.com/level/sponsors/badge.svg?color=orange)](#sponsors)
 
 ## Table of Contents
 
@@ -442,26 +441,17 @@ db.on('put', function (key, value) {
 
 See the [Contribution Guide](https://github.com/Level/community/blob/master/CONTRIBUTING.md) for more details.
 
-## Backers
+## Donate
 
-Thank you to all our backers! 🙏  [Become a backer](https://opencollective.com/level#backer)
+To sustain [`Level`](https://github.com/Level) and its activities, become a backer or sponsor on [Open Collective](https://opencollective.com/level). Your logo or avatar will be displayed on our 28+ [GitHub repositories](https://github.com/Level), [npm](https://www.npmjs.com/) packages and (soon) [our website](http://leveldb.org). 💖
 
-<a href="https://opencollective.com/level#backers" target="_blank"><img src="https://opencollective.com/level/backers.svg?width=890"></a>
+### Backers
 
-## Sponsors
+[![Open Collective backers](https://opencollective.com/level/backers.svg?width=890)](https://opencollective.com/level)
 
-Support this project by [becoming a sponsor](https://opencollective.com/level#sponsor). Your logo will show up here with a link to your website.
+### Sponsors
 
-<a href="https://opencollective.com/level/sponsor/0/website" target="_blank"><img src="https://opencollective.com/level/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/level/sponsor/1/website" target="_blank"><img src="https://opencollective.com/level/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/level/sponsor/2/website" target="_blank"><img src="https://opencollective.com/level/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/level/sponsor/3/website" target="_blank"><img src="https://opencollective.com/level/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/level/sponsor/4/website" target="_blank"><img src="https://opencollective.com/level/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/level/sponsor/5/website" target="_blank"><img src="https://opencollective.com/level/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/level/sponsor/6/website" target="_blank"><img src="https://opencollective.com/level/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/level/sponsor/7/website" target="_blank"><img src="https://opencollective.com/level/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/level/sponsor/8/website" target="_blank"><img src="https://opencollective.com/level/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/level/sponsor/9/website" target="_blank"><img src="https://opencollective.com/level/sponsor/9/avatar.svg"></a>
+[![Open Collective sponsors](https://opencollective.com/level/sponsors.svg?width=890)](https://opencollective.com/level)
 
 ## License
 
