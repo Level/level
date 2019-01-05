@@ -79,19 +79,19 @@ If you want to use [Promises](#promise-support), you will need a polyfill like [
 
 For options specific to [`leveldown`][leveldown] and [`level-js`][level-js] ("underlying store" from here on out), please see their respective READMEs.
 
-* [<code><b>level()</b></code>](#ctor)
-* [<code>db.<b>open()</b></code>](#open)
-* [<code>db.<b>close()</b></code>](#close)
-* [<code>db.<b>put()</b></code>](#put)
-* [<code>db.<b>get()</b></code>](#get)
-* [<code>db.<b>del()</b></code>](#del)
-* [<code>db.<b>batch()</b></code> *(array form)*](#batch)
-* [<code>db.<b>batch()</b></code> *(chained form)*](#batch_chained)
-* [<code>db.<b>isOpen()</b></code>](#isOpen)
-* [<code>db.<b>isClosed()</b></code>](#isClosed)
-* [<code>db.<b>createReadStream()</b></code>](#createReadStream)
-* [<code>db.<b>createKeyStream()</b></code>](#createKeyStream)
-* [<code>db.<b>createValueStream()</b></code>](#createValueStream)
+* <a href="#ctor"><code><b>level()</b></code></a>
+* <a href="#open"><code>db.<b>open()</b></code></a>
+* <a href="#close"><code>db.<b>close()</b></code></a>
+* <a href="#put"><code>db.<b>put()</b></code></a>
+* <a href="#get"><code>db.<b>get()</b></code></a>
+* <a href="#del"><code>db.<b>del()</b></code></a>
+* <a href="#batch"><code>db.<b>batch()</b></code></a> *(array form)*
+* <a href="#batch_chained"><code>db.<b>batch()</b></code></a> *(chained form)*
+* <a href="#isOpen"><code>db.<b>isOpen()</b></code></a>
+* <a href="#isClosed"><code>db.<b>isClosed()</b></code></a>
+* <a href="#createReadStream"><code>db.<b>createReadStream()</b></code></a>
+* <a href="#createKeyStream"><code>db.<b>createKeyStream()</b></code></a>
+* <a href="#createValueStream"><code>db.<b>createValueStream()</b></code></a>
 
 <a name="ctor"></a>
 ### `db = level(location[, options[, callback]])`
@@ -337,7 +337,7 @@ Underlying stores may have additional options.
 <a name="createKeyStream"></a>
 ### `db.createKeyStream([options])`
 
-Returns a [Readable Stream](https://nodejs.org/docs/latest/api/stream.html#stream_readable_streams) of keys rather than key-value pairs. Use the same options as described for [`createReadStream`](#createReadStream) to control the range and direction.
+Returns a [Readable Stream](https://nodejs.org/docs/latest/api/stream.html#stream_readable_streams) of keys rather than key-value pairs. Use the same options as described for <a href="#createReadStream"><code>createReadStream</code></a> to control the range and direction.
 
 You can also obtain this stream by passing an options object to `createReadStream()` with `keys` set to `true` and `values` set to `false`. The result is equivalent; both streams operate in [object mode](https://nodejs.org/docs/latest/api/stream.html#stream_object_mode).
 
@@ -357,7 +357,7 @@ db.createReadStream({ keys: true, values: false })
 <a name="createValueStream"></a>
 ### `db.createValueStream([options])`
 
-Returns a [Readable Stream](https://nodejs.org/docs/latest/api/stream.html#stream_readable_streams) of values rather than key-value pairs. Use the same options as described for [`createReadStream`](#createReadStream) to control the range and direction.
+Returns a [Readable Stream](https://nodejs.org/docs/latest/api/stream.html#stream_readable_streams) of values rather than key-value pairs. Use the same options as described for <a href="#createReadStream"><code>createReadStream</code></a> to control the range and direction.
 
 You can also obtain this stream by passing an options object to `createReadStream()` with `values` set to `true` and `keys` set to `false`. The result is equivalent; both streams operate in [object mode](https://nodejs.org/docs/latest/api/stream.html#stream_object_mode).
 
