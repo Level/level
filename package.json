@@ -1,22 +1,16 @@
 {
   "name": "level",
-  "description": "Fast & simple storage - a Node.js-style LevelDB wrapper (a convenience package bundling LevelUP & LevelDOWN)",
   "version": "5.0.0-0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Level/level.git"
-  },
-  "homepage": "https://github.com/Level/level",
-  "keywords": [
-    "leveldb",
-    "stream",
-    "database",
-    "db",
-    "store",
-    "storage",
-    "json"
-  ],
+  "description": "Fast & simple storage - a Node.js-style LevelDB wrapper (a convenience package bundling LevelUP & LevelDOWN)",
+  "license": "MIT",
   "main": "level.js",
+  "scripts": {
+    "test": "standard && nyc node test.js && verify-travis-appveyor",
+    "test-browser-local": "airtap --local test-browser.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "postinstall": "opencollective-postinstall || exit 0",
+    "hallmark": "hallmark --fix CHANGELOG.md UPGRADING.md"
+  },
   "browser": "browser.js",
   "dependencies": {
     "level-js": "^4.0.0",
@@ -35,20 +29,26 @@
     "uuid": "^3.3.2",
     "verify-travis-appveyor": "^3.0.0"
   },
-  "scripts": {
-    "test": "standard && nyc node test.js && verify-travis-appveyor",
-    "test-browser-local": "airtap --local test-browser.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "postinstall": "opencollective-postinstall || exit 0",
-    "hallmark": "hallmark --fix CHANGELOG.md UPGRADING.md"
-  },
-  "engines": {
-    "node": ">=8.6.0"
-  },
-  "license": "MIT",
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/level",
     "logo": "https://opencollective.com/level/logo.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Level/level.git"
+  },
+  "homepage": "https://github.com/Level/level",
+  "keywords": [
+    "leveldb",
+    "stream",
+    "database",
+    "db",
+    "store",
+    "storage",
+    "json"
+  ],
+  "engines": {
+    "node": ">=8.6.0"
   }
 }
