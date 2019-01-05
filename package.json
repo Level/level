@@ -5,11 +5,11 @@
   "license": "MIT",
   "main": "level.js",
   "scripts": {
-    "test": "standard && nyc node test.js && verify-travis-appveyor",
+    "test": "standard && hallmark && nyc node test.js && verify-travis-appveyor",
     "test-browser-local": "airtap --local test-browser.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "postinstall": "opencollective-postinstall || exit 0",
-    "hallmark": "hallmark --fix CHANGELOG.md UPGRADING.md"
+    "hallmark": "hallmark --fix"
   },
   "browser": "browser.js",
   "dependencies": {
