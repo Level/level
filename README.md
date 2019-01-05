@@ -442,12 +442,6 @@ db.on('put', function (key, value) {
 
 See the [Contribution Guide](https://github.com/Level/community/blob/master/CONTRIBUTING.md) for more details.
 
-## Contributors
-
-This project exists thanks to all the people who contribute. [Contribute](CONTRIBUTING.md).
-
-<a href="https://github.com/Level/level/graphs/contributors"><img src="https://opencollective.com/level/contributors.svg?width=890" /></a>
-
 ## Backers
 
 Thank you to all our backers! 🙏  [Become a backer](https://opencollective.com/level#backer)
