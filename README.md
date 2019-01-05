@@ -15,20 +15,17 @@
 
 ## Table of Contents
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
-* [Introduction](#introduction)
-* [Usage](#usage)
-* [Supported Platforms](#supported-platforms)
-* [API](#api)
-* [Promise Support](#promise-support)
-* [Events](#events)
-* [Contributing](#contributing)
-* [Contributors](#contributors)
-* [Backers](#backers)
-* [Sponsors](#sponsors)
-* [License](#license)
+- [Introduction](#introduction)
+- [Usage](#usage)
+- [Supported Platforms](#supported-platforms)
+- [API](#api)
+- [Promise Support](#promise-support)
+- [Events](#events)
+- [Contributing](#contributing)
+- [Donate](#donate)
+- [License](#license)
 
 </details>
 
@@ -36,9 +33,9 @@
 
 This is a convenience package that:
 
-* exports a function that returns a [`levelup`](https://github.com/level/levelup#ctor) instance when invoked
-* bundles the current release of [`leveldown`][leveldown] and [`level-js`][level-js]
-* leverages encodings using [`encoding-down`][encoding-down].
+- exports a function that returns a [`levelup`](https://github.com/level/levelup#ctor) instance when invoked
+- bundles the current release of [`leveldown`][leveldown] and [`level-js`][level-js]
+- leverages encodings using [`encoding-down`][encoding-down].
 
 Use this package to avoid having to explicitly install `leveldown` and/or `level-js` when you just want to use `levelup`. It uses `leveldown` in Node.js or Electron and `level-js` in browsers (when bundled by [`browserify`](https://github.com/browserify/browserify) or similar).
 
@@ -79,22 +76,24 @@ If you want to use [Promises](#promise-support), you will need a polyfill like [
 
 For options specific to [`leveldown`][leveldown] and [`level-js`][level-js] ("underlying store" from here on out), please see their respective READMEs.
 
-* <a href="#ctor"><code><b>level()</b></code></a>
-* <a href="#open"><code>db.<b>open()</b></code></a>
-* <a href="#close"><code>db.<b>close()</b></code></a>
-* <a href="#put"><code>db.<b>put()</b></code></a>
-* <a href="#get"><code>db.<b>get()</b></code></a>
-* <a href="#del"><code>db.<b>del()</b></code></a>
-* <a href="#batch"><code>db.<b>batch()</b></code></a> *(array form)*
-* <a href="#batch_chained"><code>db.<b>batch()</b></code></a> *(chained form)*
-* <a href="#isOpen"><code>db.<b>isOpen()</b></code></a>
-* <a href="#isClosed"><code>db.<b>isClosed()</b></code></a>
-* <a href="#createReadStream"><code>db.<b>createReadStream()</b></code></a>
-* <a href="#createKeyStream"><code>db.<b>createKeyStream()</b></code></a>
-* <a href="#createValueStream"><code>db.<b>createValueStream()</b></code></a>
+- <a href="#ctor"><code><b>level()</b></code></a>
+- <a href="#open"><code>db.<b>open()</b></code></a>
+- <a href="#close"><code>db.<b>close()</b></code></a>
+- <a href="#put"><code>db.<b>put()</b></code></a>
+- <a href="#get"><code>db.<b>get()</b></code></a>
+- <a href="#del"><code>db.<b>del()</b></code></a>
+- <a href="#batch"><code>db.<b>batch()</b></code></a> _(array form)_
+- <a href="#batch_chained"><code>db.<b>batch()</b></code></a> _(chained form)_
+- <a href="#isOpen"><code>db.<b>isOpen()</b></code></a>
+- <a href="#isClosed"><code>db.<b>isClosed()</b></code></a>
+- <a href="#createReadStream"><code>db.<b>createReadStream()</b></code></a>
+- <a href="#createKeyStream"><code>db.<b>createKeyStream()</b></code></a>
+- <a href="#createValueStream"><code>db.<b>createValueStream()</b></code></a>
 
 <a name="ctor"></a>
+
 ### `db = level(location[, options[, callback]])`
+
 The main entry point for creating a new `levelup` instance.
 
 - `location` is a string pointing to the LevelDB location to be opened or in browsers, the name of the [`IDBDatabase`](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase) to be opened.
@@ -141,15 +140,19 @@ level('my-db', { createIfMissing: false }, function (err, db) {
 Note that `createIfMissing` is an option specific to [`leveldown`][leveldown].
 
 <a name="open"></a>
+
 ### `db.open([callback])`
+
 Opens the underlying store. In general you should never need to call this method directly as it's automatically called by <a href="#ctor"><code>levelup()</code></a>.
 
-However, it is possible to *reopen* the store after it has been closed with <a href="#close"><code>close()</code></a>, although this is not generally advised.
+However, it is possible to _reopen_ the store after it has been closed with <a href="#close"><code>close()</code></a>, although this is not generally advised.
 
 If no callback is passed, a promise is returned.
 
 <a name="close"></a>
+
 ### `db.close([callback])`
+
 <code>close()</code> closes the underlying store. The callback will receive any error encountered during closing as the first argument.
 
 You should always clean up your `levelup` instance by calling `close()` when you no longer need it to free up resources. A store cannot be opened by multiple instances of `levelup` simultaneously.
@@ -157,7 +160,9 @@ You should always clean up your `levelup` instance by calling `close()` when you
 If no callback is passed, a promise is returned.
 
 <a name="put"></a>
+
 ### `db.put(key, value[, options][, callback])`
+
 <code>put()</code> is the primary method for inserting data into the store. Both `key` and `value` can be of any type as far as `levelup` is concerned.
 
 - `options` is passed on to the underlying store
@@ -166,7 +171,9 @@ If no callback is passed, a promise is returned.
 If no callback is passed, a promise is returned.
 
 <a name="get"></a>
+
 ### `db.get(key[, options][, callback])`
+
 <code>get()</code> is the primary method for fetching data from the store. The `key` can be of any type. If it doesn't exist in the store then the callback or promise will receive an error. A not-found err object will be of type `'NotFoundError'` so you can `err.type == 'NotFoundError'` or you can perform a truthy test on the property `err.notFound`.
 
 ```js
@@ -190,8 +197,11 @@ db.get('foo', function (err, value) {
 If no callback is passed, a promise is returned.
 
 <a name="del"></a>
+
 ### `db.del(key[, options][, callback])`
+
 <code>del()</code> is the primary method for removing data from the store.
+
 ```js
 db.del('foo', function (err) {
   if (err)
@@ -205,10 +215,12 @@ db.del('foo', function (err) {
 If no callback is passed, a promise is returned.
 
 <a name="batch"></a>
-### `db.batch(array[, options][, callback])` *(array form)*
-<code>batch()</code> can be used for very fast bulk-write operations (both *put* and *delete*). The `array` argument should contain a list of operations to be executed sequentially, although as a whole they are performed as an atomic operation inside the underlying store.
 
-Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the *type* is either `'put'` or `'del'`. In the case of `'del'` the `value` property is ignored. Any entries with a `key` of `null` or `undefined` will cause an error to be returned on the `callback` and any `type: 'put'` entry with a `value` of `null` or `undefined` will return an error.
+### `db.batch(array[, options][, callback])` _(array form)_
+
+<code>batch()</code> can be used for very fast bulk-write operations (both _put_ and _delete_). The `array` argument should contain a list of operations to be executed sequentially, although as a whole they are performed as an atomic operation inside the underlying store.
+
+Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the _type_ is either `'put'` or `'del'`. In the case of `'del'` the `value` property is ignored. Any entries with a `key` of `null` or `undefined` will cause an error to be returned on the `callback` and any `type: 'put'` entry with a `value` of `null` or `undefined` will return an error.
 
 ```js
 var ops = [
@@ -231,7 +243,9 @@ db.batch(ops, function (err) {
 If no callback is passed, a promise is returned.
 
 <a name="batch_chained"></a>
-### `db.batch()` *(chained form)*
+
+### `db.batch()` _(chained form)_
+
 <code>batch()</code>, when called with no arguments will return a `Batch` object which can be used to build, and eventually commit, an atomic batch operation. Depending on how it's used, it is possible to obtain greater performance when using the chained form of `batch()` over the array form.
 
 ```js
@@ -246,13 +260,13 @@ db.batch()
 
 **`batch.put(key, value)`**
 
-Queue a *put* operation on the current batch, not committed until a `write()` is called on the batch.
+Queue a _put_ operation on the current batch, not committed until a `write()` is called on the batch.
 
 This method may `throw` a `WriteError` if there is a problem with your put (such as the `value` being `null` or `undefined`).
 
 **`batch.del(key)`**
 
-Queue a *del* operation on the current batch, not committed until a `write()` is called on the batch.
+Queue a _del_ operation on the current batch, not committed until a `write()` is called on the batch.
 
 This method may `throw` a `WriteError` if there is a problem with your delete.
 
@@ -266,7 +280,7 @@ The number of queued operations on the current batch.
 
 **`batch.write([options][, callback])`**
 
-Commit the queued operations for this batch. All operations not *cleared* will be written to the underlying store atomically, that is, they will either all succeed or fail with no partial commits.
+Commit the queued operations for this batch. All operations not _cleared_ will be written to the underlying store atomically, that is, they will either all succeed or fail with no partial commits.
 
 - `options` is passed on to the underlying store.
 - `options.keyEncoding` and `options.valueEncoding` are not supported here.
@@ -274,24 +288,27 @@ Commit the queued operations for this batch. All operations not *cleared* will b
 If no callback is passed, a promise is returned.
 
 <a name="isOpen"></a>
+
 ### `db.isOpen()`
 
 A `levelup` instance can be in one of the following states:
 
-  * *"new"*     - newly created, not opened or closed
-  * *"opening"* - waiting for the underlying store to be opened
-  * *"open"*    - successfully opened the store, available for use
-  * *"closing"* - waiting for the store to be closed
-  * *"closed"*  - store has been successfully closed, should not be used
+- _"new"_     - newly created, not opened or closed
+- _"opening"_ - waiting for the underlying store to be opened
+- _"open"_    - successfully opened the store, available for use
+- _"closing"_ - waiting for the store to be closed
+- _"closed"_  - store has been successfully closed, should not be used
 
 `isOpen()` will return `true` only when the state is "open".
 
 <a name="isClosed"></a>
+
 ### `db.isClosed()`
 
-`isClosed()` will return `true` only when the state is "closing" *or* "closed", it can be useful for determining if read and write operations are permissible.
+`isClosed()` will return `true` only when the state is "closing" _or_ "closed", it can be useful for determining if read and write operations are permissible.
 
 <a name="createReadStream"></a>
+
 ### `db.createReadStream([options])`
 
 Returns a [Readable Stream](https://nodejs.org/docs/latest/api/stream.html#stream_readable_streams) of key-value pairs. A pair is an object with `key` and `value` properties. By default it will stream all entries in the underlying store from start to end. Use the options described below to control the range, direction and results.
@@ -314,27 +331,28 @@ db.createReadStream()
 
 You can supply an options object as the first parameter to `createReadStream()` with the following properties:
 
-* `gt` (greater than), `gte` (greater than or equal) define the lower bound of the range to be streamed. Only entries where the key is greater than (or equal to) this option will be included in the range. When `reverse=true` the order will be reversed, but the entries streamed will be the same.
+- `gt` (greater than), `gte` (greater than or equal) define the lower bound of the range to be streamed. Only entries where the key is greater than (or equal to) this option will be included in the range. When `reverse=true` the order will be reversed, but the entries streamed will be the same.
 
-* `lt` (less than), `lte` (less than or equal) define the higher bound of the range to be streamed. Only entries where the key is less than (or equal to) this option will be included in the range. When `reverse=true` the order will be reversed, but the entries streamed will be the same.
+- `lt` (less than), `lte` (less than or equal) define the higher bound of the range to be streamed. Only entries where the key is less than (or equal to) this option will be included in the range. When `reverse=true` the order will be reversed, but the entries streamed will be the same.
 
-* `reverse` *(boolean, default: `false`)*: stream entries in reverse order. Beware that due to the way that stores like LevelDB work, a reverse seek can be slower than a forward seek.
+- `reverse` _(boolean, default: `false`)_: stream entries in reverse order. Beware that due to the way that stores like LevelDB work, a reverse seek can be slower than a forward seek.
 
-* `limit` *(number, default: `-1`)*: limit the number of entries collected by this stream. This number represents a *maximum* number of entries and may not be reached if you get to the end of the range first. A value of `-1` means there is no limit. When `reverse=true` the entries with the highest keys will be returned instead of the lowest keys.
+- `limit` _(number, default: `-1`)_: limit the number of entries collected by this stream. This number represents a _maximum_ number of entries and may not be reached if you get to the end of the range first. A value of `-1` means there is no limit. When `reverse=true` the entries with the highest keys will be returned instead of the lowest keys.
 
-* `keys` *(boolean, default: `true`)*: whether the results should contain keys. If set to `true` and `values` set to `false` then results will simply be keys, rather than objects with a `key` property. Used internally by the `createKeyStream()` method.
+- `keys` _(boolean, default: `true`)_: whether the results should contain keys. If set to `true` and `values` set to `false` then results will simply be keys, rather than objects with a `key` property. Used internally by the `createKeyStream()` method.
 
-* `values` *(boolean, default: `true`)*: whether the results should contain values. If set to `true` and `keys` set to `false` then results will simply be values, rather than objects with a `value` property. Used internally by the `createValueStream()` method.
+- `values` _(boolean, default: `true`)_: whether the results should contain values. If set to `true` and `keys` set to `false` then results will simply be values, rather than objects with a `value` property. Used internally by the `createValueStream()` method.
 
 Legacy options:
 
-* `start`: instead use `gte`
+- `start`: instead use `gte`
 
-* `end`: instead use `lte`
+- `end`: instead use `lte`
 
 Underlying stores may have additional options.
 
 <a name="createKeyStream"></a>
+
 ### `db.createKeyStream([options])`
 
 Returns a [Readable Stream](https://nodejs.org/docs/latest/api/stream.html#stream_readable_streams) of keys rather than key-value pairs. Use the same options as described for <a href="#createReadStream"><code>createReadStream</code></a> to control the range and direction.
@@ -355,6 +373,7 @@ db.createReadStream({ keys: true, values: false })
 ```
 
 <a name="createValueStream"></a>
+
 ### `db.createValueStream([options])`
 
 Returns a [Readable Stream](https://nodejs.org/docs/latest/api/stream.html#stream_readable_streams) of values rather than key-value pairs. Use the same options as described for <a href="#createReadStream"><code>createReadStream</code></a> to control the range and direction.
@@ -415,7 +434,7 @@ var main = async () => {
 `levelup` is an [`EventEmitter`](https://nodejs.org/api/events.html) and emits the following events.
 
 | Event     | Description                 | Arguments            |
-|:----------|:----------------------------|:---------------------|
+| :-------- | :-------------------------- | :------------------- |
 | `put`     | Key has been updated        | `key, value` (any)   |
 | `del`     | Key has been deleted        | `key` (any)          |
 | `batch`   | Batch has executed          | `operations` (array) |
@@ -458,6 +477,9 @@ To sustain [`Level`](https://github.com/Level) and its activities, become a back
 [MIT](LICENSE.md) © 2013-present Rod Vagg and [Contributors](CONTRIBUTORS.md).
 
 [level-badge]: http://leveldb.org/img/badge.svg
+
 [leveldown]: https://github.com/level/leveldown
+
 [level-js]: https://github.com/level/level-js
+
 [encoding-down]: https://github.com/level/encoding-down
