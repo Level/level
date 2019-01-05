@@ -35,6 +35,13 @@
     "url": "https://opencollective.com/level",
     "logo": "https://opencollective.com/level/logo.txt"
   },
+  "hallmark": {
+    "community": "level-community",
+    "ignore": [
+      "CONTRIBUTING.md",
+      "README.md"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Level/level.git"
