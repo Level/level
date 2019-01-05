@@ -436,11 +436,11 @@ db.on('put', function (key, value) {
 
 ## Contributing
 
-`level` is an **OPEN Open Source Project**. This means that:
+[`Level/level`](https://github.com/Level/level) is an **OPEN Open Source Project**. This means that:
 
 > Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.
 
-See the [`CONTRIBUTING.md`](https://github.com/Level/community/blob/master/CONTRIBUTING.md) file for more details.
+See the [Contribution Guide](https://github.com/Level/community/blob/master/CONTRIBUTING.md) for more details.
 
 ## Contributors
 
@@ -471,9 +471,7 @@ Support this project by [becoming a sponsor](https://opencollective.com/level#sp
 
 ## License
 
-Copyright (c) 2012-present `level` [contributors](https://github.com/level/community#contributors).
-
-`level` is licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included `LICENSE.md` file for more details.
+[MIT](LICENSE.md) © 2013-present Rod Vagg and [Contributors](CONTRIBUTORS.md).
 
 [level-badge]: http://leveldb.org/img/badge.svg
 [levelup]: https://github.com/level/levelup
