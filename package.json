@@ -9,7 +9,9 @@
     "test-browser-local": "airtap --local test-browser.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "postinstall": "opencollective-postinstall || exit 0",
-    "hallmark": "hallmark --fix"
+    "hallmark": "hallmark --fix",
+    "dependency-check": "dependency-check . browser.js test*.js",
+    "prepublishOnly": "npm run dependency-check"
   },
   "browser": "browser.js",
   "dependencies": {
@@ -21,6 +23,7 @@
   "devDependencies": {
     "airtap": "^2.0.1",
     "coveralls": "^3.0.2",
+    "dependency-check": "^3.3.0",
     "hallmark": "^0.1.0",
     "level-community": "^3.0.0",
     "nyc": "^12.0.2",
