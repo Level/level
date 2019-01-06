@@ -2,10 +2,10 @@
 
 > Fast & simple storage. A Node.js-style `LevelDB` wrapper for Node.js, Electron and browsers.
 
-[![level badge][level-badge]](https://github.com/level/awesome)
+[![level badge][level-badge]](https://github.com/Level/awesome)
 [![npm](https://img.shields.io/npm/v/level.svg?label=&logo=npm)](https://www.npmjs.com/package/level)
 [![Node version](https://img.shields.io/node/v/level.svg)](https://www.npmjs.com/package/level)
-[![Travis](https://img.shields.io/travis/Level/level.svg?logo=travis&label=)](http://travis-ci.org/Level/level)
+[![Travis](https://img.shields.io/travis/Level/level.svg?logo=travis&label=)](https://travis-ci.org/Level/level)
 [![AppVeyor](https://img.shields.io/appveyor/ci/Level/level.svg?logo=appveyor&label=)](https://ci.appveyor.com/project/Level/level)
 [![Coverage Status](https://coveralls.io/repos/github/Level/level/badge.svg)](https://coveralls.io/github/Level/level)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
@@ -33,7 +33,7 @@
 
 This is a convenience package that:
 
-- exports a function that returns a [`levelup`](https://github.com/level/levelup#ctor) instance when invoked
+- exports a function that returns a [`levelup`](https://github.com/Level/levelup#ctor) instance when invoked
 - bundles the current release of [`leveldown`][leveldown] and [`level-js`][level-js]
 - leverages encodings using [`encoding-down`][encoding-down].
 
@@ -478,8 +478,8 @@ To sustain [`Level`](https://github.com/Level) and its activities, become a back
 
 [level-badge]: http://leveldb.org/img/badge.svg
 
-[leveldown]: https://github.com/level/leveldown
+[leveldown]: https://github.com/Level/leveldown
 
-[level-js]: https://github.com/level/level-js
+[level-js]: https://github.com/Level/level-js
 
-[encoding-down]: https://github.com/level/encoding-down
+[encoding-down]: https://github.com/Level/encoding-down
