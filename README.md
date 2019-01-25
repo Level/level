@@ -6,7 +6,6 @@
 [![npm](https://img.shields.io/npm/v/level.svg?label=&logo=npm)](https://www.npmjs.com/package/level)
 [![Node version](https://img.shields.io/node/v/level.svg)](https://www.npmjs.com/package/level)
 [![Travis](https://img.shields.io/travis/Level/level.svg?logo=travis&label=)](https://travis-ci.org/Level/level)
-[![AppVeyor](https://img.shields.io/appveyor/ci/Level/level.svg?logo=appveyor&label=)](https://ci.appveyor.com/project/Level/level)
 [![Coverage Status](https://coveralls.io/repos/github/Level/level/badge.svg)](https://coveralls.io/github/Level/level)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/dm/level.svg?label=dl)](https://www.npmjs.com/package/level)
