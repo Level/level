@@ -4,21 +4,27 @@ If you are upgrading, please see the [upgrade guide](UPGRADING.md).
 
 ## [Unreleased][unreleased]
 
+## [5.0.0] - 2019-03-29
+
 ### Changed
 
-- Upgrade `leveldown` from `^4.0.0` to `^5.0.0-1` ([#133](https://github.com/Level/level/issues/133)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `leveldown` from `^4.0.0` to `^5.0.0` ([#133](https://github.com/Level/level/issues/133), [#144](https://github.com/Level/level/issues/144)) ([**@vweevers**](https://github.com/vweevers))
 - Upgrade `level-packager` from `^3.0.0` to `^5.0.0` ([#113](https://github.com/Level/level/issues/113), [#131](https://github.com/Level/level/issues/131)) ([**@ralphtheninja**](https://github.com/ralphtheninja), [**@vweevers**](https://github.com/vweevers))
 - Prefer `var` over `const` in README ([`f032b6c`](https://github.com/Level/level/commit/f032b6c)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
 - Upgrade `standard` devDependency from `^11.0.0` to `^12.0.0` ([#118](https://github.com/Level/level/issues/118)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
 - Tweak copyright years for less maintenance ([`0b9c8ad`](https://github.com/Level/level/commit/0b9c8ad)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
+- Tweak Open Collective documentation ([#137](https://github.com/Level/level/issues/137)) ([**@vweevers**](https://github.com/vweevers))
+- Apply common project tweaks ([#136](https://github.com/Level/level/issues/136), [#138](https://github.com/Level/level/issues/138)) ([**@vweevers**](https://github.com/vweevers))
+- Add `.travis.yml` and `appveyor.yml` to `.npmignore` ([`7b5c340`](https://github.com/Level/level/commit/7b5c340)) ([**@vweevers**](https://github.com/vweevers))
 
 ### Added
 
 - Integrate `level-js` for browser support ([#135](https://github.com/Level/level/issues/135)) ([**@vweevers**](https://github.com/vweevers))
 - Add appveyor ([#112](https://github.com/Level/level/issues/112)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
 - Enable OSX on Travis ([#111](https://github.com/Level/level/issues/111)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
-- Add `nyc` and `coveralls` devDependencies ([#115](https://github.com/Level/level/issues/115)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
+- Add `nyc` and `coveralls` devDependencies ([#115](https://github.com/Level/level/issues/115), [#143](https://github.com/Level/level/issues/143)) ([**@ralphtheninja**](https://github.com/ralphtheninja), [**@vweevers**](https://github.com/vweevers))
 - Add `hallmark` devDependency ([#134](https://github.com/Level/level/issues/134)) ([**@vweevers**](https://github.com/vweevers))
+- Add note about Rollup to `README.md` ([#139](https://github.com/Level/level/issues/139)) ([**@vweevers**](https://github.com/vweevers))
 
 ### Removed
 
@@ -333,7 +339,9 @@ If you are upgrading, please see the [upgrade guide](UPGRADING.md).
 
 :seedling: Initial release.
 
-[unreleased]: https://github.com/level/level/compare/v4.0.0...HEAD
+[unreleased]: https://github.com/level/level/compare/v5.0.0...HEAD
+
+[5.0.0]: https://github.com/level/level/compare/v4.0.0...v5.0.0
 
 [4.0.0]: https://github.com/level/level/compare/v3.0.1...v4.0.0
 
