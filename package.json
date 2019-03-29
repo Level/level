@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "level.js",
   "scripts": {
-    "test": "standard && hallmark && nyc node test.js && verify-travis-appveyor",
+    "test": "standard && nyc node test.js && verify-travis-appveyor",
     "test-browser-local": "airtap --local test-browser.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "postinstall": "opencollective-postinstall || exit 0",
