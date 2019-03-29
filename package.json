@@ -1,6 +1,6 @@
 {
   "name": "level",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Fast & simple storage - a Node.js-style LevelDB wrapper (a convenience package bundling LevelUP & LevelDOWN)",
   "license": "MIT",
   "main": "level.js",
