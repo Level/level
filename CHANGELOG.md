@@ -4,6 +4,12 @@ If you are upgrading, please see the [upgrade guide](UPGRADING.md).
 
 ## [Unreleased][unreleased]
 
+## [5.0.1] - 2019-03-29
+
+### Fixed
+
+- Temporarily skip `hallmark` test because it breaks CITGM ([#145](https://github.com/Level/level/issues/145)) ([**@vweevers**](https://github.com/vweevers))
+
 ## [5.0.0] - 2019-03-29
 
 ### Changed
@@ -339,7 +345,9 @@ If you are upgrading, please see the [upgrade guide](UPGRADING.md).
 
 :seedling: Initial release.
 
-[unreleased]: https://github.com/level/level/compare/v5.0.0...HEAD
+[unreleased]: https://github.com/level/level/compare/v5.0.1...HEAD
+
+[5.0.1]: https://github.com/level/level/compare/v5.0.0...v5.0.1
 
 [5.0.0]: https://github.com/level/level/compare/v4.0.0...v5.0.0
 
