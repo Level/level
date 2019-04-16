@@ -26,7 +26,7 @@
     "dependency-check": "^3.3.0",
     "hallmark": "^0.1.0",
     "level-community": "^3.0.0",
-    "nyc": "^13.2.0",
+    "nyc": "^14.0.0",
     "pinkie": "^2.0.4",
     "standard": "^12.0.0",
     "tape": "^4.2.2",
