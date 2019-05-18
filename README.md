@@ -37,7 +37,7 @@ This is a convenience package that:
 - bundles the current release of [`leveldown`][leveldown] and [`level-js`][level-js]
 - leverages encodings using [`encoding-down`][encoding-down].
 
-Use this package to avoid having to explicitly install `leveldown` and/or `level-js` when you just want to use `levelup`. It uses `leveldown` in Node.js or Electron and `level-js` in browsers (when bundled by [`browserify`](https://github.com/browserify/browserify), [`webpack`](https://webpack.js.org/) or similar. Note: [`rollup`](https://rollupjs.org/) fails to properly resolve the [`browser`](package.json) field).
+Use this package to avoid having to explicitly install `leveldown` or `level-js` when you just want to use `levelup`. It uses `leveldown` in Node.js or Electron and `level-js` in browsers (when bundled by [`browserify`](https://github.com/browserify/browserify), [`webpack`](https://webpack.js.org/), [`rollup`](https://rollupjs.org/) or similar). For a quick start, visit [`browserify-starter`](https://github.com/Level/browserify-starter) or [`webpack-starter`](https://github.com/Level/webpack-starter). Note: `rollup` currently fails to properly resolve the [`browser`](package.json) field.
 
 ## Usage
 
