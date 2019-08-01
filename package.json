@@ -7,6 +7,7 @@
   "scripts": {
     "test": "standard && nyc node test.js && verify-travis-appveyor",
     "test-browser-local": "airtap --local test-browser.js",
+    "test-types": "dtslint .",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "postinstall": "opencollective-postinstall || exit 0",
     "hallmark": "hallmark --fix",
@@ -24,12 +25,14 @@
     "airtap": "^2.0.1",
     "coveralls": "^3.0.2",
     "dependency-check": "^3.3.0",
+    "dtslint": "^0.9.0",
     "hallmark": "^1.0.0",
     "level-community": "^3.0.0",
     "nyc": "^14.0.0",
     "pinkie": "^2.0.4",
     "standard": "^13.0.1",
     "tape": "^4.2.2",
+    "typescript": "^3.5.3",
     "uuid": "^3.3.2",
     "verify-travis-appveyor": "^3.0.0"
   },
