@@ -35,8 +35,8 @@ test('level put', function (t) {
   })
 })
 
-test('level binary value', function (t) {
-  t.plan(9)
+test('level Buffer value', function (t) {
+  t.plan(5)
 
   var db = factory({ valueEncoding: 'binary' })
   var buf = Buffer.from('00ff', 'hex')
@@ -49,15 +49,32 @@ test('level binary value', function (t) {
       t.ok(Buffer.isBuffer(value), 'is a buffer')
       t.same(value, buf)
 
-      db.get('binary', { valueEncoding: 'id' }, function (err, value) {
-        t.ifError(err, 'no get error')
-        t.notOk(Buffer.isBuffer(value), 'is not a buffer')
-        t.ok(value instanceof Uint8Array, 'is a Uint8Array')
-        t.same(Buffer.from(value), buf)
+      db.close(function (err) {
+        t.ifError(err, 'no close error')
+      })
+    })
+  })
+})
 
-        db.close(function (err) {
-          t.ifError(err, 'no close error')
-        })
+test('level Buffer key', function (t) {
+  var db = factory({ keyEncoding: 'binary' })
+  var key = Buffer.from('00ff', 'hex')
+
+  if (!db.supports.bufferKeys) {
+    t.pass('Environment does not support buffer keys')
+    return t.end()
+  }
+
+  db.put(key, 'value', function (err) {
+    t.ifError(err, 'no put error')
+
+    db.get(key, function (err, value) {
+      t.ifError(err, 'no get error')
+      t.is(value, 'value')
+
+      db.close(function (err) {
+        t.ifError(err, 'no close error')
+        t.end()
       })
     })
   })
