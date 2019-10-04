@@ -16,8 +16,8 @@
   "browser": "browser.js",
   "dependencies": {
     "level-js": "^5.0.0",
-    "level-packager": "^5.0.0",
-    "leveldown": "^5.0.0",
+    "level-packager": "^5.0.3",
+    "leveldown": "^5.3.0",
     "opencollective-postinstall": "^2.0.0"
   },
   "devDependencies": {
