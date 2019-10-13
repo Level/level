@@ -77,6 +77,7 @@ If you want to use [Promises](#promise-support), you will need a polyfill like [
 For options specific to [`leveldown`][leveldown] and [`level-js`][level-js] ("underlying store" from here on out), please see their respective READMEs.
 
 - <a href="#ctor"><code><b>level()</b></code></a>
+- <a href="#supports"><code>db.<b>supports</b></code></a>
 - <a href="#open"><code>db.<b>open()</b></code></a>
 - <a href="#close"><code>db.<b>close()</b></code></a>
 - <a href="#put"><code>db.<b>put()</b></code></a>
@@ -89,6 +90,8 @@ For options specific to [`leveldown`][leveldown] and [`level-js`][level-js] ("un
 - <a href="#createReadStream"><code>db.<b>createReadStream()</b></code></a>
 - <a href="#createKeyStream"><code>db.<b>createKeyStream()</b></code></a>
 - <a href="#createValueStream"><code>db.<b>createValueStream()</b></code></a>
+- <a href="#iterator"><code>db.<b>iterator()</b></code></a>
+- <a href="#clear"><code>db.<b>clear()</b></code></a>
 
 <a name="ctor"></a>
 
@@ -138,6 +141,22 @@ level('my-db', { createIfMissing: false }, function (err, db) {
 ```
 
 Note that `createIfMissing` is an option specific to [`leveldown`][leveldown].
+
+<a name="supports"></a>
+
+### `db.supports`
+
+A read-only [manifest](https://github.com/Level/supports). Not [widely supported yet](https://github.com/Level/community/issues/83). Might be used like so:
+
+```js
+if (!db.supports.permanence) {
+  throw new Error('Persistent storage is required')
+}
+
+if (db.supports.bufferKeys && db.supports.promises) {
+  await db.put(Buffer.from('key'), 'value')
+}
+```
 
 <a name="open"></a>
 
@@ -393,6 +412,29 @@ db.createReadStream({ keys: false, values: true })
   })
 ```
 
+<a name="iterator"></a>
+
+### `db.iterator([options])`
+
+Returns an [`abstract-leveldown` iterator](https://github.com/Level/abstract-leveldown/#iterator), which is what powers the readable streams above. Options are the same as the range options of <a href="#createReadStream"><code>createReadStream</code></a> and are passed to the underlying store.
+
+<a name="clear"></a>
+
+### `db.clear([options][, callback])`
+
+**This method is experimental. Not all underlying stores support it yet. Consult [Level/community#79](https://github.com/Level/community/issues/79) to find out if your (combination of) dependencies support `db.clear()`.**
+
+Delete all entries or a range. Not guaranteed to be atomic. Accepts the following range options (with the same rules as on iterators):
+
+- `gt` (greater than), `gte` (greater than or equal) define the lower bound of the range to be deleted. Only entries where the key is greater than (or equal to) this option will be included in the range. When `reverse=true` the order will be reversed, but the entries deleted will be the same.
+- `lt` (less than), `lte` (less than or equal) define the higher bound of the range to be deleted. Only entries where the key is less than (or equal to) this option will be included in the range. When `reverse=true` the order will be reversed, but the entries deleted will be the same.
+- `reverse` _(boolean, default: `false`)_: delete entries in reverse order. Only effective in combination with `limit`, to remove the last N records.
+- `limit` _(number, default: `-1`)_: limit the number of entries to be deleted. This number represents a _maximum_ number of entries and may not be reached if you get to the end of the range first. A value of `-1` means there is no limit. When `reverse=true` the entries with the highest keys will be deleted instead of the lowest keys.
+
+If no options are provided, all entries will be deleted. The `callback` function will be called with no arguments if the operation was successful or with an `WriteError` if it failed for any reason.
+
+If no callback is passed, a promise is returned.
+
 ## Promise Support
 
 `level(up)` ships with native `Promise` support out of the box.
@@ -404,6 +446,7 @@ Each function taking a callback also can be used as a promise, if the callback i
 - `db.del(key[, options])`
 - `db.batch(ops[, options])`
 - `db.batch().write()`
+- `db.clear(options)`
 
 The only exception is the `level` constructor itself, which if no callback is passed will lazily open the underlying store in the background.
 
