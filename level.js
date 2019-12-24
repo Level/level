@@ -1,1 +1,3 @@
-module.exports = require('level-packager')(require('leveldown'))
+const level = require('level-packager')(require('leveldown'))
+module.exports = level
+module.exports.default = level
