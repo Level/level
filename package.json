@@ -21,7 +21,7 @@
     "opencollective-postinstall": "^2.0.0"
   },
   "devDependencies": {
-    "airtap": "^2.0.1",
+    "airtap": "^3.0.0",
     "coveralls": "^3.0.2",
     "dependency-check": "^3.3.0",
     "hallmark": "^2.0.0",
