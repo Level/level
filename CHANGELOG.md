@@ -2,6 +2,14 @@
 
 _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
+## [6.0.1] - 2020-03-04
+
+### Changed
+
+- Switch from `opencollective-postinstall` to npm `funding` ([#173](https://github.com/Level/level/issues/173)) ([**@Richienb**](https://github.com/Richienb))
+- Upgrade `nyc` devDependency from `^14.0.0` to `^15.0.0` ([#169](https://github.com/Level/level/issues/169)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `airtap` devDependency from `^2.0.1` to `^3.0.0` ([#171](https://github.com/Level/level/issues/171)) ([**@vweevers**](https://github.com/vweevers))
+
 ## [6.0.0] - 2019-10-19
 
 ### Changed
@@ -362,6 +370,8 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 ## 0.8.0 - 2013-05-19
 
 :seedling: Initial release.
+
+[6.0.1]: https://github.com/Level/level/compare/v6.0.0...v6.0.1
 
 [6.0.0]: https://github.com/Level/level/compare/v5.0.1...v6.0.0
 
