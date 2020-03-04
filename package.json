@@ -8,7 +8,6 @@
     "test": "standard && nyc node test.js && verify-travis-appveyor",
     "test-browser-local": "airtap --local test-browser.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "postinstall": "opencollective-postinstall || exit 0",
     "hallmark": "hallmark --fix",
     "dependency-check": "dependency-check . browser.js test*.js",
     "prepublishOnly": "npm run dependency-check"
@@ -17,8 +16,7 @@
   "dependencies": {
     "level-js": "^5.0.0",
     "level-packager": "^5.1.0",
-    "leveldown": "^5.4.0",
-    "opencollective-postinstall": "^2.0.0"
+    "leveldown": "^5.4.0"
   },
   "devDependencies": {
     "airtap": "^3.0.0",
@@ -33,10 +31,9 @@
     "uuid": "^3.3.2",
     "verify-travis-appveyor": "^3.0.0"
   },
-  "collective": {
+  "funding": {
     "type": "opencollective",
-    "url": "https://opencollective.com/level",
-    "logo": "https://opencollective.com/level/logo.txt"
+    "url": "https://opencollective.com/level"
   },
   "hallmark": {
     "community": "level-community"
