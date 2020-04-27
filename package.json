@@ -27,7 +27,7 @@
     "nyc": "^15.0.0",
     "pinkie": "^2.0.4",
     "standard": "^14.0.0",
-    "tape": "^4.2.2",
+    "tape": "^5.0.0",
     "uuid": "^7.0.2",
     "verify-travis-appveyor": "^3.0.0"
   },
