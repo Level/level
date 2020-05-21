@@ -28,7 +28,7 @@
     "pinkie": "^2.0.4",
     "standard": "^14.0.0",
     "tape": "^4.2.2",
-    "uuid": "^7.0.2",
+    "uuid": "^8.1.0",
     "verify-travis-appveyor": "^3.0.0"
   },
   "funding": {
