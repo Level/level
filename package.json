@@ -22,7 +22,7 @@
     "airtap": "^3.0.0",
     "coveralls": "^3.0.2",
     "dependency-check": "^4.1.0",
-    "hallmark": "^2.0.0",
+    "hallmark": "^3.0.0",
     "level-community": "^3.0.0",
     "nyc": "^15.0.0",
     "pinkie": "^2.0.4",
