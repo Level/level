@@ -19,7 +19,7 @@
     "leveldown": "^5.4.0"
   },
   "devDependencies": {
-    "airtap": "^3.0.0",
+    "airtap": "^4.0.1",
     "coveralls": "^3.0.2",
     "dependency-check": "^4.1.0",
     "hallmark": "^3.0.0",
