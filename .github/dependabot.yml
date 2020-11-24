@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    ignore:
+      - dependency-name: dependency-check
+      - dependency-name: uuid
+      - dependency-name: airtap
+      - dependency-name: standard
