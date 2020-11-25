@@ -6,7 +6,7 @@
   "main": "level.js",
   "scripts": {
     "test": "standard && nyc node test.js && verify-travis-appveyor",
-    "test-browser-local": "airtap --local test-browser.js",
+    "test-browsers-local": "airtap --verbose test-browser.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "hallmark": "hallmark --fix",
     "dependency-check": "dependency-check --no-dev . browser.js",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "airtap": "^4.0.1",
+    "airtap-playwright": "^1.0.1",
     "coveralls": "^3.0.2",
     "dependency-check": "^4.1.0",
     "hallmark": "^3.0.0",
