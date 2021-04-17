@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "level.js",
   "scripts": {
-    "test": "standard && nyc node test.js && verify-travis-appveyor",
+    "test": "standard && nyc node test.js",
     "test-browsers-local": "airtap --verbose test-browser.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "hallmark": "hallmark --fix",
@@ -28,8 +28,7 @@
     "nyc": "^15.0.0",
     "standard": "^16.0.3",
     "tape": "^5.0.1",
-    "uuid": "^8.3.2",
-    "verify-travis-appveyor": "^3.0.0"
+    "uuid": "^8.3.2"
   },
   "funding": {
     "type": "opencollective",
