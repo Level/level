@@ -26,10 +26,9 @@
     "hallmark": "^3.0.0",
     "level-community": "^3.0.0",
     "nyc": "^15.0.0",
-    "pinkie": "^2.0.4",
-    "standard": "^15.0.0",
+    "standard": "^16.0.3",
     "tape": "^5.0.1",
-    "uuid": "^3.4.0",
+    "uuid": "^8.3.2",
     "verify-travis-appveyor": "^3.0.0"
   },
   "funding": {

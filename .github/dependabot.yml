@@ -6,7 +6,3 @@ updates:
       interval: monthly
     ignore:
       - dependency-name: dependency-check
-      # Pinned for browser compat
-      - dependency-name: uuid
-      - dependency-name: airtap
-      - dependency-name: standard

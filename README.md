@@ -44,11 +44,11 @@ Use this package to avoid having to explicitly install `leveldown` or `level-js`
 **If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
 
 ```js
-var level = require('level')
+const level = require('level')
 
 // 1) Create our database, supply location and options.
 //    This will create or open the underlying store.
-var db = level('my-db')
+const db = level('my-db')
 
 // 2) Put a key & value
 db.put('name', 'Level', function (err) {

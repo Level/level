@@ -4,3 +4,4 @@ providers:
 browsers:
   - name: chromium
   - name: firefox
+  - name: webkit
