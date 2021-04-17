@@ -12,6 +12,14 @@
     "dependency-check": "dependency-check --no-dev . browser.js",
     "prepublishOnly": "npm run dependency-check"
   },
+  "files": [
+    "browser.js",
+    "level.js",
+    "CHANGELOG.md",
+    "CONTRIBUTORS.md",
+    "LICENSE.md",
+    "UPGRADING.md"
+  ],
   "browser": "browser.js",
   "dependencies": {
     "level-js": "^6.0.0",
