@@ -480,6 +480,7 @@ const main = async () => {
 | `put`     | Key has been updated        | `key, value` (any)   |
 | `del`     | Key has been deleted        | `key` (any)          |
 | `batch`   | Batch has executed          | `operations` (array) |
+| `clear`   | Entries were deleted        | `options` (object)   |
 | `opening` | Underlying store is opening | -                    |
 | `open`    | Store has opened            | -                    |
 | `ready`   | Alias of `open`             | -                    |
