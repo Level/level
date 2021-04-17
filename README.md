@@ -247,7 +247,7 @@ If no callback is passed, a promise is returned.
 Each operation is contained in an object having the following properties: `type`, `key`, `value`, where the _type_ is either `'put'` or `'del'`. In the case of `'del'` the `value` property is ignored. Any entries with a `key` of `null` or `undefined` will cause an error to be returned on the `callback` and any `type: 'put'` entry with a `value` of `null` or `undefined` will return an error.
 
 ```js
-var ops = [
+const ops = [
   { type: 'del', key: 'father' },
   { type: 'put', key: 'name', value: 'Yuri Irsenovich Kim' },
   { type: 'put', key: 'dob', value: '16 February 1941' },
@@ -367,12 +367,6 @@ You can supply an options object as the first parameter to `createReadStream()` 
 
 - `values` _(boolean, default: `true`)_: whether the results should contain values. If set to `true` and `keys` set to `false` then results will simply be values, rather than objects with a `value` property. Used internally by the `createValueStream()` method.
 
-Legacy options:
-
-- `start`: instead use `gte`
-
-- `end`: instead use `lte`
-
 Underlying stores may have additional options.
 
 <a name="createKeyStream"></a>
@@ -458,7 +452,7 @@ The only exception is the `level` constructor itself, which if no callback is pa
 Example:
 
 ```js
-var db = level('my-db')
+const db = level('my-db')
 
 db.put('foo', 'bar')
   .then(function () { return db.get('foo') })
@@ -469,8 +463,8 @@ db.put('foo', 'bar')
 Or using `async/await`:
 
 ```js
-var main = async () => {
-  var db = level('my-db')
+const main = async () => {
+  const db = level('my-db')
 
   await db.put('foo', 'bar')
   console.log(await db.get('foo'))
