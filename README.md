@@ -64,13 +64,18 @@ db.put('name', 'Level', function (err) {
 })
 ```
 
+With `async/await`:
+
+```js
+await db.put('name', 'Level')
+const value = await db.get('name')
+```
+
 ## Supported Platforms
 
-At the time of writing, `level` works in Node.js 8+ and Electron 3+ on Linux, Mac OS, Windows and FreeBSD, including any future Node.js and Electron release thanks to [N-API](https://nodejs.org/api/n-api.html), including ARM platforms like Raspberry Pi and Android, as well as in Chrome, Firefox, IE 11, Edge, Safari, iPhone and Chrome for Android. For details, see [Supported Platforms](https://github.com/Level/leveldown#supported-platforms) of `leveldown` and [Browser Support](https://github.com/Level/level-js#browser-support) of `level-js`.
+At the time of writing, `level` works in Node.js 10+ and Electron 5+ on Linux, Mac OS, Windows and FreeBSD, including any future Node.js and Electron release thanks to [N-API](https://nodejs.org/api/n-api.html), including ARM platforms like Raspberry Pi and Android, as well as in Chrome, Firefox, Edge, Safari, iOS Safari and Chrome for Android. For details, see [Supported Platforms](https://github.com/Level/leveldown#supported-platforms) of `leveldown` and [Browser Support](https://github.com/Level/level-js#browser-support) of `level-js`.
 
-Binary values are supported across the board; in browsers that support [IndexedDB Second Edition](https://www.w3.org/TR/IndexedDB-2/) (like Chrome and Firefox) you can also use binary keys.
-
-If you want to use [Promises](#promise-support), you will need a polyfill like [`pinkie`](https://github.com/floatdrop/pinkie) in older browsers like IE.
+Binary keys and values are supported across the board.
 
 ## API
 
