@@ -2,6 +2,25 @@
 
 _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
+## [7.0.0] - 2021-04-17
+
+### Changed
+
+- **Breaking:** bump `leveldown` and `level-packager` ([`53bd922`](https://github.com/Level/level/commit/53bd922)) (Vincent Weevers)
+- **Breaking:** bump `level-js` from 5.x to 6.x ([#194](https://github.com/Level/level/issues/194)) ([`1f6c603`](https://github.com/Level/level/commit/1f6c603)) (Alex Potsides)
+- **Breaking:** modernize syntax ([Level/community#98](https://github.com/Level/community/issues/98)) ([`d001b2c`](https://github.com/Level/level/commit/d001b2c)) (Vincent Weevers)
+- Add `files` to `package.json` and remove `.npmignore` ([`329e1f5`](https://github.com/Level/level/commit/329e1f5)) (Vincent Weevers)
+
+### Added
+
+- Document chained batch encoding options ([Level/levelup#633](https://github.com/Level/levelup/issues/633)) ([`0b3c11d`](https://github.com/Level/level/commit/0b3c11d)) (Vincent Weevers)
+- Document the `clear` event ([Level/community#79](https://github.com/Level/community/issues/79)) ([`52314bf`](https://github.com/Level/level/commit/52314bf)) (Vincent Weevers)
+
+### Removed
+
+- **Breaking:** drop node 8 ([Level/community#98](https://github.com/Level/community/issues/98)) ([`f8a0047`](https://github.com/Level/level/commit/f8a0047), [`31317a6`](https://github.com/Level/level/commit/31317a6)) (Vincent Weevers)
+- Remove legacy range options from README ([Level/community#86](https://github.com/Level/community/issues/86)) ([`e56c6b1`](https://github.com/Level/level/commit/e56c6b1)) (Vincent Weevers)
+
 ## [6.0.1] - 2020-03-04
 
 ### Changed
@@ -370,6 +389,8 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 ## 0.8.0 - 2013-05-19
 
 :seedling: Initial release.
+
+[7.0.0]: https://github.com/Level/level/compare/v6.0.1...v7.0.0
 
 [6.0.1]: https://github.com/Level/level/compare/v6.0.0...v6.0.1
 
