@@ -282,15 +282,15 @@ db.batch()
   .write(function () { console.log('Done!') })
 ```
 
-**`batch.put(key, value)`**
+**`batch.put(key, value[, options])`**
 
-Queue a _put_ operation on the current batch, not committed until a `write()` is called on the batch.
+Queue a _put_ operation on the current batch, not committed until a `write()` is called on the batch. The `options` argument is passed on to the underlying store; `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding of this operation.
 
 This method may `throw` a `WriteError` if there is a problem with your put (such as the `value` being `null` or `undefined`).
 
-**`batch.del(key)`**
+**`batch.del(key[, options])`**
 
-Queue a _del_ operation on the current batch, not committed until a `write()` is called on the batch.
+Queue a _del_ operation on the current batch, not committed until a `write()` is called on the batch. The `options` argument is passed on to the underlying store; `options.keyEncoding` is passed to [`encoding-down`][encoding-down], allowing you to override the key encoding of this operation.
 
 This method may `throw` a `WriteError` if there is a problem with your delete.
 
