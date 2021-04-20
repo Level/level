@@ -7,7 +7,7 @@
   "scripts": {
     "test": "standard && nyc node test.js",
     "test-browsers-local": "airtap --verbose test-browser.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report -r lcovonly",
     "hallmark": "hallmark --fix",
     "dependency-check": "dependency-check --no-dev . browser.js",
     "prepublishOnly": "npm run dependency-check"
