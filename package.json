@@ -29,7 +29,6 @@
   "devDependencies": {
     "airtap": "^4.0.1",
     "airtap-playwright": "^1.0.1",
-    "coveralls": "^3.0.2",
     "dependency-check": "^4.1.0",
     "hallmark": "^3.0.0",
     "level-community": "^3.0.0",
