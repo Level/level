@@ -197,7 +197,7 @@ If no callback is passed, a promise is returned.
 
 <code>close()</code> closes the underlying store. The callback will receive any error encountered during closing as the first argument.
 
-You should always clean up your `levelup` instance by calling `close()` when you no longer need it to free up resources. A store cannot be opened by multiple instances of `levelup` simultaneously.
+A `levelup` instance has associated resources like file handles and locks. When you no longer need your `levelup` instance (for the remainder of your program) call `close()` to free up resources. The underlying store cannot be opened by multiple instances of `levelup` simultaneously.
 
 If no callback is passed, a promise is returned.
 
