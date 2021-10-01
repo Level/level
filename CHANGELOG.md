@@ -1,8 +1,8 @@
 # Changelog
 
-_**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
-
 ## [7.0.0] - 2021-04-17
+
+_If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
 
 ### Changed
 
@@ -31,6 +31,8 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
 ## [6.0.0] - 2019-10-19
 
+_If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
+
 ### Changed
 
 - **Breaking:** upgrade `level-js` from `^4.0.0` to `^5.0.0` ([#158](https://github.com/Level/level/issues/158)) ([**@vweevers**](https://github.com/vweevers))
@@ -54,6 +56,8 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 - Temporarily skip `hallmark` test because it breaks CITGM ([#145](https://github.com/Level/level/issues/145)) ([**@vweevers**](https://github.com/vweevers))
 
 ## [5.0.0] - 2019-03-29
+
+_If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
 
 ### Changed
 
@@ -81,6 +85,8 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 - Remove contributors from `package.json` ([`f37252d`](https://github.com/Level/level/commit/f37252d)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
 
 ## [4.0.0] - 2018-05-23
+
+_If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
 
 ### Changed
 
@@ -114,6 +120,8 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 - Fix postinstall failures with OpenCollective ([**@vweevers**](https://github.com/vweevers))
 
 ## [3.0.0] - 2018-02-17
+
+_If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
 
 ### Added
 
@@ -154,6 +162,8 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 - Restore node 4 ([**@vweevers**](https://github.com/vweevers))
 
 ## [2.0.0] - 2017-10-17
+
+_If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
 
 ### Added
 
@@ -304,12 +314,12 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
 ## [0.17.0] - 2013-10-01
 
+_0.17.0 and 0.17.0-1 are listed out of order here, due to 0.17.0-1 not adhering to the semver rules that we follow today._
+
 ### Changed
 
 - Update `levelup` to `~0.17.0` ([**@rvagg**](https://github.com/rvagg))
 - Update `leveldown` to `~0.9.0` ([**@rvagg**](https://github.com/rvagg))
-
-**Historical Note** 0.17.0 and 0.17.0-1 are listed out of order here, due to 0.17.0-1 not adhering to the semver rules that we follow today.
 
 ## [0.17.0-1] - 2013-10-09
 
@@ -390,80 +400,80 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
 :seedling: Initial release.
 
-[7.0.0]: https://github.com/Level/level/compare/v6.0.1...v7.0.0
+[7.0.0]: https://github.com/Level/level/releases/tag/v7.0.0
 
-[6.0.1]: https://github.com/Level/level/compare/v6.0.0...v6.0.1
+[6.0.1]: https://github.com/Level/level/releases/tag/v6.0.1
 
-[6.0.0]: https://github.com/Level/level/compare/v5.0.1...v6.0.0
+[6.0.0]: https://github.com/Level/level/releases/tag/v6.0.0
 
-[5.0.1]: https://github.com/Level/level/compare/v5.0.0...v5.0.1
+[5.0.1]: https://github.com/Level/level/releases/tag/v5.0.1
 
-[5.0.0]: https://github.com/Level/level/compare/v4.0.0...v5.0.0
+[5.0.0]: https://github.com/Level/level/releases/tag/v5.0.0
 
-[4.0.0]: https://github.com/Level/level/compare/v3.0.2...v4.0.0
+[4.0.0]: https://github.com/Level/level/releases/tag/v4.0.0
 
-[3.0.2]: https://github.com/Level/level/compare/v3.0.1...v3.0.2
+[3.0.2]: https://github.com/Level/level/releases/tag/v3.0.2
 
-[3.0.1]: https://github.com/Level/level/compare/v3.0.0...v3.0.1
+[3.0.1]: https://github.com/Level/level/releases/tag/v3.0.1
 
-[3.0.0]: https://github.com/Level/level/compare/v2.1.2...v3.0.0
+[3.0.0]: https://github.com/Level/level/releases/tag/v3.0.0
 
-[2.1.2]: https://github.com/Level/level/compare/v2.1.1...v2.1.2
+[2.1.2]: https://github.com/Level/level/releases/tag/v2.1.2
 
-[2.1.1]: https://github.com/Level/level/compare/v2.1.0...v2.1.1
+[2.1.1]: https://github.com/Level/level/releases/tag/v2.1.1
 
-[2.1.0]: https://github.com/Level/level/compare/v2.0.1...v2.1.0
+[2.1.0]: https://github.com/Level/level/releases/tag/v2.1.0
 
-[2.0.1]: https://github.com/Level/level/compare/v2.0.0...v2.0.1
+[2.0.1]: https://github.com/Level/level/releases/tag/v2.0.1
 
-[2.0.0]: https://github.com/Level/level/compare/v2.0.0-rc3...v2.0.0
+[2.0.0]: https://github.com/Level/level/releases/tag/v2.0.0
 
-[2.0.0-rc3]: https://github.com/Level/level/compare/v2.0.0-rc2...v2.0.0-rc3
+[2.0.0-rc3]: https://github.com/Level/level/releases/tag/v2.0.0-rc3
 
-[2.0.0-rc2]: https://github.com/Level/level/compare/v2.0.0-rc1...v2.0.0-rc2
+[2.0.0-rc2]: https://github.com/Level/level/releases/tag/v2.0.0-rc2
 
-[2.0.0-rc1]: https://github.com/Level/level/compare/v1.7.0...v2.0.0-rc1
+[2.0.0-rc1]: https://github.com/Level/level/releases/tag/v2.0.0-rc1
 
-[1.7.0]: https://github.com/Level/level/compare/v1.6.0...v1.7.0
+[1.7.0]: https://github.com/Level/level/releases/tag/v1.7.0
 
-[1.6.0]: https://github.com/Level/level/compare/v1.5.0...v1.6.0
+[1.6.0]: https://github.com/Level/level/releases/tag/v1.6.0
 
-[1.5.0]: https://github.com/Level/level/compare/v1.4.0...v1.5.0
+[1.5.0]: https://github.com/Level/level/releases/tag/v1.5.0
 
-[1.4.0]: https://github.com/Level/level/compare/v1.3.0...v1.4.0
+[1.4.0]: https://github.com/Level/level/releases/tag/v1.4.0
 
-[1.3.0]: https://github.com/Level/level/compare/v1.2.0...v1.3.0
+[1.3.0]: https://github.com/Level/level/releases/tag/v1.3.0
 
-[1.2.0]: https://github.com/Level/level/compare/v1.1.0...v1.2.0
+[1.2.0]: https://github.com/Level/level/releases/tag/v1.2.0
 
-[1.1.0]: https://github.com/Level/level/compare/v1.0.0...v1.1.0
+[1.1.0]: https://github.com/Level/level/releases/tag/v1.1.0
 
-[1.0.0]: https://github.com/Level/level/compare/v1.0.0-0...v1.0.0
+[1.0.0]: https://github.com/Level/level/releases/tag/v1.0.0
 
-[1.0.0-0]: https://github.com/Level/level/compare/v0.19.1...v1.0.0-0
+[1.0.0-0]: https://github.com/Level/level/releases/tag/v1.0.0-0
 
-[0.19.1]: https://github.com/Level/level/compare/v0.19.0...v0.19.1
+[0.19.1]: https://github.com/Level/level/releases/tag/v0.19.1
 
-[0.19.0]: https://github.com/Level/level/compare/0.18.0...v0.19.0
+[0.19.0]: https://github.com/Level/level/releases/tag/v0.19.0
 
-[0.18.0]: https://github.com/Level/level/compare/0.17.0...0.18.0
+[0.18.0]: https://github.com/Level/level/releases/tag/0.18.0
 
-[0.17.0]: https://github.com/Level/level/compare/0.17.0-1...0.17.0
+[0.17.0]: https://github.com/Level/level/releases/tag/0.17.0
 
-[0.17.0-1]: https://github.com/Level/level/compare/0.16.0...0.17.0-1
+[0.17.0-1]: https://github.com/Level/level/releases/tag/0.17.0-1
 
-[0.16.0]: https://github.com/Level/level/compare/0.15.0...0.16.0
+[0.16.0]: https://github.com/Level/level/releases/tag/0.16.0
 
-[0.15.0]: https://github.com/Level/level/compare/0.14.0...0.15.0
+[0.15.0]: https://github.com/Level/level/releases/tag/0.15.0
 
-[0.14.0]: https://github.com/Level/level/compare/0.13.0...0.14.0
+[0.14.0]: https://github.com/Level/level/releases/tag/0.14.0
 
-[0.13.0]: https://github.com/Level/level/compare/0.12.0...0.13.0
+[0.13.0]: https://github.com/Level/level/releases/tag/0.13.0
 
-[0.12.0]: https://github.com/Level/level/compare/0.11.0...0.12.0
+[0.12.0]: https://github.com/Level/level/releases/tag/0.12.0
 
-[0.11.0]: https://github.com/Level/level/compare/0.10.0...0.11.0
+[0.11.0]: https://github.com/Level/level/releases/tag/0.11.0
 
-[0.10.0]: https://github.com/Level/level/compare/0.9.0...0.10.0
+[0.10.0]: https://github.com/Level/level/releases/tag/0.10.0
 
-[0.9.0]: https://github.com/Level/level/compare/0.8.0...0.9.0
+[0.9.0]: https://github.com/Level/level/releases/tag/0.9.0

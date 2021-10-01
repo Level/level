@@ -16,8 +16,6 @@
     "browser.js",
     "level.js",
     "CHANGELOG.md",
-    "CONTRIBUTORS.md",
-    "LICENSE.md",
     "UPGRADING.md"
   ],
   "browser": "browser.js",
@@ -31,7 +29,6 @@
     "airtap-playwright": "^1.0.1",
     "dependency-check": "^4.1.0",
     "hallmark": "^3.0.0",
-    "level-community": "^3.0.0",
     "nyc": "^15.0.0",
     "standard": "^16.0.3",
     "tape": "^5.0.1",
@@ -40,9 +37,6 @@
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/level"
-  },
-  "hallmark": {
-    "community": "level-community"
   },
   "repository": {
     "type": "git",
