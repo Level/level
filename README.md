@@ -28,8 +28,8 @@
   - [`db.del(key[, options][, callback])`](#dbdelkey-options-callback)
   - [`db.batch(array[, options][, callback])` _(array form)_](#dbbatcharray-options-callback-array-form)
   - [`db.batch()` _(chained form)_](#dbbatch-chained-form)
-  - [`db.isOpen()`](#dbisopen)
-  - [`db.isClosed()`](#dbisclosed)
+  - [`db.status`](#dbstatus)
+  - [`db.isOperational()`](#dbisoperational)
   - [`db.createReadStream([options])`](#dbcreatereadstreamoptions)
   - [`db.createKeyStream([options])`](#dbcreatekeystreamoptions)
   - [`db.createValueStream([options])`](#dbcreatevaluestreamoptions)
@@ -105,8 +105,8 @@ For options specific to [`leveldown`][leveldown] and [`level-js`][level-js] ("un
 - <a href="#del"><code>db.<b>del()</b></code></a>
 - <a href="#batch"><code>db.<b>batch()</b></code></a> _(array form)_
 - <a href="#batch_chained"><code>db.<b>batch()</b></code></a> _(chained form)_
-- <a href="#isOpen"><code>db.<b>isOpen()</b></code></a>
-- <a href="#isClosed"><code>db.<b>isClosed()</b></code></a>
+- <a href="#status"><code>db.<b>status</b></code></a>
+- <a href="#isOperational"><code>db.<b>isOperational()</b></code></a>
 - <a href="#createReadStream"><code>db.<b>createReadStream()</b></code></a>
 - <a href="#createKeyStream"><code>db.<b>createKeyStream()</b></code></a>
 - <a href="#createValueStream"><code>db.<b>createValueStream()</b></code></a>
@@ -336,25 +336,23 @@ Commit the queued operations for this batch. All operations not _cleared_ will b
 
 If no callback is passed, a promise is returned.
 
-<a name="isOpen"></a>
+<a name="status"></a>
 
-### `db.isOpen()`
+### `db.status`
 
-A `levelup` instance can be in one of the following states:
+A readonly string that is one of:
 
-- _"new"_     - newly created, not opened or closed
-- _"opening"_ - waiting for the underlying store to be opened
-- _"open"_    - successfully opened the store, available for use
-- _"closing"_ - waiting for the store to be closed
-- _"closed"_  - store has been successfully closed, should not be used
+- `new`     - newly created, not opened or closed
+- `opening` - waiting for the underlying store to be opened
+- `open`    - successfully opened the store, available for use
+- `closing` - waiting for the store to be closed
+- `closed`  - store has been successfully closed.
 
-`isOpen()` will return `true` only when the state is "open".
+<a name="isOperational"></a>
 
-<a name="isClosed"></a>
+### `db.isOperational()`
 
-### `db.isClosed()`
-
-`isClosed()` will return `true` only when the state is "closing" _or_ "closed", it can be useful for determining if read and write operations are permissible.
+Returns `true` if the store accepts operations, which in the case of `level(up)` means that `status` is either `opening` or `open`, because it opens itself and queues up operations until opened.
 
 <a name="createReadStream"></a>
 
