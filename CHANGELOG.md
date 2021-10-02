@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.0.1] - 2021-10-02
+
+### Added
+
+- Document new features ([#207](https://github.com/Level/level/issues/207)) ([`ad8f924`](https://github.com/Level/level/commit/ad8f924)) (Vincent Weevers)
+
+### Fixed
+
+- Bump dependencies to prevent dedupe ([`7083ec6`](https://github.com/Level/level/commit/7083ec6)) (Vincent Weevers)
+- Clarify `close()` documentation ([#197](https://github.com/Level/level/issues/197)) ([`c82fdbc`](https://github.com/Level/level/commit/c82fdbc)) (Vincent Weevers)
+
 ## [7.0.0] - 2021-04-17
 
 _If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
@@ -396,9 +407,11 @@ _0.17.0 and 0.17.0-1 are listed out of order here, due to 0.17.0-1 not adhering 
 - Update `levelup` to `~0.9.0` ([**@rvagg**](https://github.com/rvagg))
 - Update `leveldown` to `~0.5.0` ([**@rvagg**](https://github.com/rvagg))
 
-## 0.8.0 - 2013-05-19
+## [0.8.0] - 2013-05-19
 
 :seedling: Initial release.
+
+[7.0.1]: https://github.com/Level/level/releases/tag/v7.0.1
 
 [7.0.0]: https://github.com/Level/level/releases/tag/v7.0.0
 
@@ -477,3 +490,5 @@ _0.17.0 and 0.17.0-1 are listed out of order here, due to 0.17.0-1 not adhering 
 [0.10.0]: https://github.com/Level/level/releases/tag/0.10.0
 
 [0.9.0]: https://github.com/Level/level/releases/tag/0.9.0
+
+[0.8.0]: https://github.com/Level/level/releases/tag/0.8.0
