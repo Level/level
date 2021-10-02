@@ -101,6 +101,7 @@ For options specific to [`leveldown`][leveldown] and [`level-js`][level-js] ("un
 - <a href="#close"><code>db.<b>close()</b></code></a>
 - <a href="#put"><code>db.<b>put()</b></code></a>
 - <a href="#get"><code>db.<b>get()</b></code></a>
+- <a href="#getmany"><code>db.<b>getMany()</b></code></a>
 - <a href="#del"><code>db.<b>del()</b></code></a>
 - <a href="#batch"><code>db.<b>batch()</b></code></a> _(array form)_
 - <a href="#batch_chained"><code>db.<b>batch()</b></code></a> _(chained form)_
@@ -212,7 +213,7 @@ If no callback is passed, a promise is returned.
 
 ### `db.get(key[, options][, callback])`
 
-<code>get()</code> is the primary method for fetching data from the store. The `key` can be of any type. If it doesn't exist in the store then the callback or promise will receive an error. A not-found err object will be of type `'NotFoundError'` so you can `err.type == 'NotFoundError'` or you can perform a truthy test on the property `err.notFound`.
+Get a value from the store by `key`. The `key` can be of any type. If it doesn't exist in the store then the callback or promise will receive an error. A not-found err object will be of type `'NotFoundError'` so you can `err.type == 'NotFoundError'` or you can perform a truthy test on the property `err.notFound`.
 
 ```js
 db.get('foo', function (err, value) {
@@ -233,6 +234,16 @@ db.get('foo', function (err, value) {
 - `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding for this `get` operation.
 
 If no callback is passed, a promise is returned.
+
+<a name="getmany"></a>
+
+### `db.getMany(keys[, options][, callback])`
+
+Get multiple values from the store by an array of `keys`. The optional `options` object is the same as for [`get()`](#dbgetkey-options-callback).
+
+The `callback` function will be called with an `Error` if the operation failed for any reason. If successful the first argument will be `null` and the second argument will be an array of values with the same order as `keys`. If a key was not found, the relevant value will be `undefined`.
+
+If no callback is provided, a promise is returned.
 
 <a name="del"></a>
 
