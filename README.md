@@ -467,39 +467,14 @@ If no callback is passed, a promise is returned.
 
 ## Promise Support
 
-`level(up)` ships with native `Promise` support out of the box.
-
-Each function taking a callback also can be used as a promise, if the callback is omitted. This applies for:
-
-- `db.get(key[, options])`
-- `db.put(key, value[, options])`
-- `db.del(key[, options])`
-- `db.batch(ops[, options])`
-- `db.batch().write()`
-- `db.clear(options)`
-
-The only exception is the `level` constructor itself, which if no callback is passed will lazily open the underlying store in the background.
+Each function taking a callback can also be used as a promise, if the callback is omitted. The only exception is the `level` constructor itself, which if no callback is passed will lazily open the underlying store in the background.
 
 Example:
 
 ```js
 const db = level('my-db')
-
-db.put('foo', 'bar')
-  .then(function () { return db.get('foo') })
-  .then(function (value) { console.log(value) })
-  .catch(function (err) { console.error(err) })
-```
-
-Or using `async/await`:
-
-```js
-const main = async () => {
-  const db = level('my-db')
-
-  await db.put('foo', 'bar')
-  console.log(await db.get('foo'))
-}
+await db.put('foo', 'bar')
+console.log(await db.get('foo'))
 ```
 
 ## Events
