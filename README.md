@@ -1,25 +1,27 @@
 # level
 
-> Fast & simple storage. A Node.js-style `LevelDB` wrapper for Node.js, Electron and browsers.
+**An [`abstract-level`](https://github.com/Level/abstract-level) database for Node.js and browsers, backed by [LevelDB](https://github.com/google/leveldb) or [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) respectively.** This is a convenience package that simply exports [`classic-level`](https://github.com/Level/classic-level) in Node.js and [`browser-level`](https://github.com/Level/browser-level) in browsers.
+
+> :pushpin: Which module should I use? What is `abstract-level`? Head over to the [FAQ](https://github.com/Level/community#faq).
 
 [![level badge][level-badge]](https://github.com/Level/awesome)
 [![npm](https://img.shields.io/npm/v/level.svg)](https://www.npmjs.com/package/level)
 [![Node version](https://img.shields.io/node/v/level.svg)](https://www.npmjs.com/package/level)
 [![Test](https://img.shields.io/github/workflow/status/Level/level/Test?label=test)](https://github.com/Level/level/actions/workflows/test.yml)
-[![Coverage](https://img.shields.io/codecov/c/github/Level/level?label=&logo=codecov&logoColor=fff)](https://codecov.io/gh/Level/level)
-[![Standard](https://img.shields.io/badge/standard-informational?logo=javascript&logoColor=fff)](https://standardjs.com)
+[![Coverage](https://img.shields.io/codecov/c/github/Level/level?label=\&logo=codecov\&logoColor=fff)](https://codecov.io/gh/Level/level)
+[![Standard](https://img.shields.io/badge/standard-informational?logo=javascript\&logoColor=fff)](https://standardjs.com)
 [![Common Changelog](https://common-changelog.org/badge.svg)](https://common-changelog.org)
-[![Donate](https://img.shields.io/badge/donate-orange?logo=open-collective&logoColor=fff)](https://opencollective.com/level)
+[![Donate](https://img.shields.io/badge/donate-orange?logo=open-collective\&logoColor=fff)](https://opencollective.com/level)
 
 ## Table of Contents
 
 <details><summary>Click to expand</summary>
 
-- [Introduction](#introduction)
 - [Usage](#usage)
+- [Install](#install)
 - [Supported Platforms](#supported-platforms)
 - [API](#api)
-  - [`db = level(location[, options[, callback]])`](#db--levellocation-options-callback)
+  - [`db = new Level(location[, options])`](#db--new-levellocation-options)
   - [`db.supports`](#dbsupports)
   - [`db.open([callback])`](#dbopencallback)
   - [`db.close([callback])`](#dbclosecallback)
@@ -44,67 +46,59 @@
 
 </details>
 
-## Introduction
-
-This is a convenience package that:
-
-- exports a function that returns a [`levelup`](https://github.com/Level/levelup) instance when invoked
-- bundles the current release of [`leveldown`][leveldown] and [`level-js`][level-js]
-- leverages encodings using [`encoding-down`][encoding-down].
-
-Use this package to avoid having to explicitly install `leveldown` or `level-js` when you just want to use `levelup`. It uses `leveldown` in Node.js or Electron and `level-js` in browsers (when bundled by [`browserify`](https://github.com/browserify/browserify), [`webpack`](https://webpack.js.org/), [`rollup`](https://rollupjs.org/) or similar). For a quick start, visit [`browserify-starter`](https://github.com/Level/browserify-starter) or [`webpack-starter`](https://github.com/Level/webpack-starter). Note: `rollup` currently fails to properly resolve the [`browser`](package.json) field.
-
 ## Usage
 
-**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
+_If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
 
 ```js
-const level = require('level')
+const Level = require('level')
 
-// 1) Create our database, supply location and options.
-//    This will create or open the underlying store.
-const db = level('my-db')
+// Create a database
+const db = new Level('example', { valueEncoding: 'json' })
 
-// 2) Put a key & value
-db.put('name', 'Level', function (err) {
-  if (err) return console.log('Ooops!', err) // some kind of I/O error
+// Add an entry with key 'a' and value 1
+await db.put('a', 1)
 
-  // 3) Fetch by key
-  db.get('name', function (err, value) {
-    if (err) return console.log('Ooops!', err) // likely the key was not found
+// Add multiple entries
+await db.batch([{ type: 'put', key: 'b', value: 2 }])
 
-    // Ta da!
-    console.log('name=' + value)
-  })
-})
+// Get value of key 'a': 1
+const value = await db.get('a')
+
+// Iterate entries with keys that are greater than 'a'
+for await (const [key, value] of db.iterator({ gt: 'a' })) {
+  console.log(value) // 2
+}
 ```
 
-With `async/await`:
+## Install
 
-```js
-await db.put('name', 'Level')
-const value = await db.get('name')
+With [npm](https://npmjs.org) do:
+
+```bash
+npm install level
 ```
+
+For use in browsers, this module is best used with [`browserify`](https://github.com/browserify/browserify), [`webpack`](https://webpack.js.org/), [`rollup`](https://rollupjs.org/) or similar bundlers. For a quick start, visit [`browserify-starter`](https://github.com/Level/browserify-starter) or [`webpack-starter`](https://github.com/Level/webpack-starter).
 
 ## Supported Platforms
 
-At the time of writing, `level` works in Node.js 10+ and Electron 5+ on Linux, Mac OS, Windows and FreeBSD, including any future Node.js and Electron release thanks to [N-API](https://nodejs.org/api/n-api.html), including ARM platforms like Raspberry Pi and Android, as well as in Chrome, Firefox, Edge, Safari, iOS Safari and Chrome for Android. For details, see [Supported Platforms](https://github.com/Level/leveldown#supported-platforms) of `leveldown` and [Browser Support](https://github.com/Level/level-js#browser-support) of `level-js`.
+At the time of writing, `level` works in Node.js 10+ and Electron 5+ on Linux, Mac OS, Windows and FreeBSD, including any future Node.js and Electron release thanks to [Node-API](https://nodejs.org/api/n-api.html), including ARM platforms like Raspberry Pi and Android, as well as in Chrome, Firefox, Edge, Safari, iOS Safari and Chrome for Android. For details, see [Supported Platforms](https://github.com/Level/classic-level#supported-platforms) of `classic-level` and [Browser Support](https://github.com/Level/browser-level#browser-support) of `browser-level` (not available atm).
 
 Binary keys and values are supported across the board.
 
 ## API
 
-For options specific to [`leveldown`][leveldown] and [`level-js`][level-js] ("underlying store" from here on out), please see their respective READMEs.
+For options specific to [`classic-level`](https://github.com/Level/classic-level) and [`browser-level`](https://github.com/Level/browser-level), please see their respective READMEs. Both also have a few additional methods that are not documented here.
 
-### `db = level(location[, options[, callback]])`
+### `db = new Level(location[, options])`
 
-The main entry point for creating a new `levelup` instance.
+Create a new database or open an existing one. The `location` is a string pointing to the LevelDB location to be opened, or in browsers, the name of the [`IDBDatabase`](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase) to be opened.
 
-- `location` is a string pointing to the LevelDB location to be opened or in browsers, the name of the [`IDBDatabase`](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase) to be opened.
-- `options` is passed on to the underlying store.
-- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], default encoding is `'utf8'`
+- ~~`options` is passed on to the underlying store.~~
+- ~~`options.keyEncoding` and `options.valueEncoding` are passed to `encoding-down`, default encoding is `'utf8'`~~
 
-Calling `level('my-db')` will also open the underlying store. This is an asynchronous operation which will trigger your callback if you provide one. The callback should take the form `function (err, db) {}` where `db` is the `levelup` instance. If you don't provide a callback, any read & write operations are simply queued internally until the store is fully opened.
+Calling `level('my-db')` will also open the underlying store. ~~This is an asynchronous operation which will trigger your callback if you provide one. The callback should take the form `function (err, db) {}` where `db` is the `levelup` instance. If you don't provide a callback, any read & write operations are simply queued internally until the store is fully opened.~~
 
 This leads to two alternative ways of managing a `levelup` instance:
 
@@ -131,18 +125,6 @@ db.get('foo', function (err, value) {
 })
 ```
 
-The constructor function has a `.errors` property which provides access to the different error types from [`level-errors`](https://github.com/Level/errors#api). See example below on how to use it:
-
-```js
-level('my-db', { createIfMissing: false }, function (err, db) {
-  if (err instanceof level.errors.OpenError) {
-    console.log('failed to open database')
-  }
-})
-```
-
-Note that `createIfMissing` is an option specific to [`leveldown`][leveldown].
-
 ### `db.supports`
 
 A read-only [manifest](https://github.com/Level/supports). Might be used like so:
@@ -159,7 +141,7 @@ if (db.supports.bufferKeys && db.supports.promises) {
 
 ### `db.open([callback])`
 
-Opens the underlying store. In general you shouldn't need to call this method directly as it's automatically called by [`level()`](#db--levellocation-options-callback). However, it is possible to reopen the store after it has been closed with [`close()`](#dbclosecallback).
+Opens the underlying store. In general you shouldn't need to call this method directly as it's automatically called by the database constructor. However, it is possible to reopen the store after it has been closed with [`close()`](#dbclosecallback).
 
 If no callback is passed, a promise is returned.
 
@@ -176,7 +158,7 @@ If no callback is passed, a promise is returned.
 `put()` is the primary method for inserting data into the store. Both `key` and `value` can be of any type as far as `levelup` is concerned.
 
 - `options` is passed on to the underlying store
-- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding for this `put` operation.
+- `options.keyEncoding` and `options.valueEncoding` are passed to `encoding-down`, allowing you to override the key- and/or value encoding for this `put` operation.
 
 If no callback is passed, a promise is returned.
 
@@ -200,7 +182,7 @@ db.get('foo', function (err, value) {
 ```
 
 - `options` is passed on to the underlying store.
-- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding for this `get` operation.
+- `options.keyEncoding` and `options.valueEncoding` are passed to `encoding-down`, allowing you to override the key- and/or value encoding for this `get` operation.
 
 If no callback is passed, a promise is returned.
 
@@ -224,7 +206,7 @@ db.del('foo', function (err) {
 ```
 
 - `options` is passed on to the underlying store.
-- `options.keyEncoding` is passed to [`encoding-down`][encoding-down], allowing you to override the key encoding for this `del` operation.
+- `options.keyEncoding` is passed to `encoding-down`, allowing you to override the key encoding for this `del` operation.
 
 If no callback is passed, a promise is returned.
 
@@ -250,7 +232,7 @@ db.batch(ops, function (err) {
 ```
 
 - `options` is passed on to the underlying store.
-- `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding of operations in this batch.
+- `options.keyEncoding` and `options.valueEncoding` are passed to `encoding-down`, allowing you to override the key- and/or value encoding of operations in this batch.
 
 If no callback is passed, a promise is returned.
 
@@ -270,13 +252,13 @@ db.batch()
 
 **`batch.put(key, value[, options])`**
 
-Queue a _put_ operation on the current batch, not committed until a `write()` is called on the batch. The `options` argument is passed on to the underlying store; `options.keyEncoding` and `options.valueEncoding` are passed to [`encoding-down`][encoding-down], allowing you to override the key- and/or value encoding of this operation.
+Queue a _put_ operation on the current batch, not committed until a `write()` is called on the batch. The `options` argument is passed on to the underlying store; `options.keyEncoding` and `options.valueEncoding` are passed to `encoding-down`, allowing you to override the key- and/or value encoding of this operation.
 
 This method may `throw` a `WriteError` if there is a problem with your put (such as the `value` being `null` or `undefined`).
 
 **`batch.del(key[, options])`**
 
-Queue a _del_ operation on the current batch, not committed until a `write()` is called on the batch. The `options` argument is passed on to the underlying store; `options.keyEncoding` is passed to [`encoding-down`][encoding-down], allowing you to override the key encoding of this operation.
+Queue a _del_ operation on the current batch, not committed until a `write()` is called on the batch. The `options` argument is passed on to the underlying store; `options.keyEncoding` is passed to `encoding-down`, allowing you to override the key encoding of this operation.
 
 This method may `throw` a `WriteError` if there is a problem with your delete.
 
@@ -463,9 +445,3 @@ Support us with a monthly donation on [Open Collective](https://opencollective.c
 [MIT](LICENSE)
 
 [level-badge]: https://leveljs.org/img/badge.svg
-
-[leveldown]: https://github.com/Level/leveldown
-
-[level-js]: https://github.com/Level/level-js
-
-[encoding-down]: https://github.com/Level/encoding-down

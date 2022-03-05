@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [10, 12, 14, 16]
+        node: [12, 14, 16]
     name: Node ${{ matrix.node }}
     steps:
       - name: Checkout
@@ -16,8 +16,14 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install
         run: npm install
+      - name: Install Playwright
+        if: matrix.node == 16
+        run: npx playwright install-deps
       - name: Test
         run: npm test
+      - name: Test browsers
+        if: matrix.node == 16
+        run: npm run test-browsers-local
       - name: Coverage
         run: npm run coverage
       - name: Codecov

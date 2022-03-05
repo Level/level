@@ -1,1 +1,1 @@
-module.exports = require('level-packager')(require('leveldown'))
+module.exports = require('classic-level').ClassicLevel

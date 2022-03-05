@@ -1,1 +1,1 @@
-module.exports = require('level-packager')(require('level-js'))
+module.exports = require('browser-level').BrowserLevel

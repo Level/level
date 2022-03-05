@@ -1,16 +1,13 @@
 {
   "name": "level",
   "version": "7.0.1",
-  "description": "Fast & simple storage - a Node.js-style LevelDB wrapper (a convenience package bundling LevelUP & LevelDOWN)",
+  "description": "An abstract-level database for Node.js and browsers, backed by LevelDB or IndexedDB",
   "license": "MIT",
   "main": "level.js",
   "scripts": {
     "test": "standard && nyc node test.js",
-    "test-browsers-local": "airtap --verbose test-browser.js",
-    "coverage": "nyc report -r lcovonly",
-    "hallmark": "hallmark --fix",
-    "dependency-check": "dependency-check --no-dev . browser.js",
-    "prepublishOnly": "npm run dependency-check"
+    "test-browsers-local": "airtap test.js",
+    "coverage": "nyc report -r lcovonly"
   },
   "files": [
     "browser.js",
@@ -20,14 +17,12 @@
   ],
   "browser": "browser.js",
   "dependencies": {
-    "level-js": "^6.1.0",
-    "level-packager": "^6.0.1",
-    "leveldown": "^6.1.0"
+    "browser-level": "^1.0.0",
+    "classic-level": "^1.0.0"
   },
   "devDependencies": {
     "airtap": "^4.0.1",
     "airtap-playwright": "^1.0.1",
-    "dependency-check": "^4.1.0",
     "hallmark": "^4.0.0",
     "nyc": "^15.0.0",
     "standard": "^16.0.3",
@@ -54,6 +49,6 @@
     "json"
   ],
   "engines": {
-    "node": ">=10.12.0"
+    "node": ">=12"
   }
 }
