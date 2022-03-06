@@ -2,7 +2,7 @@
 
 const test = require('tape')
 const { v4: uuid } = require('uuid')
-const Level = require('.')
+const { Level } = require('.')
 
 // Because we directly export classic-level or browser-level
 // without wrapping them, there's no need for further tests here.

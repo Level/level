@@ -71,7 +71,7 @@
 _If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
 
 ```js
-const Level = require('level')
+const { Level } = require('level')
 
 // Create a database
 const db = new Level('example', { valueEncoding: 'json' })
@@ -107,7 +107,7 @@ db.put('a', { x: 123 }, function (err) {
 
 </details>
 
-Usage from TypeScript requires generic type parameters.
+TypeScript type declarations are included and cover the methods that are common between `classic-level` and `browser-level`. Usage from TypeScript requires generic type parameters.
 
 <details><summary>TypeScript example</summary>
 

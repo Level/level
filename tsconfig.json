@@ -1,0 +1,7 @@
+{
+  "extends": "@voxpelli/tsconfig/node12.json",
+  "compilerOptions": {
+    "checkJs": false
+  },
+  "include": ["*.ts", "types/*.ts"]
+}

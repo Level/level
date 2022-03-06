@@ -1,1 +1,1 @@
-module.exports = require('browser-level').BrowserLevel
+exports.Level = require('browser-level').BrowserLevel
