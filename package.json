@@ -1,7 +1,7 @@
 {
   "name": "level",
   "version": "7.0.1",
-  "description": "A universal abstract-level database for Node.js and browsers, backed by LevelDB or IndexedDB",
+  "description": "Universal abstract-level database for Node.js and browsers",
   "license": "MIT",
   "main": "index.js",
   "types": "./index.d.ts",

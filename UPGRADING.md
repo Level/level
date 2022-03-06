@@ -4,7 +4,7 @@ This document describes breaking changes and how to upgrade. For a complete list
 
 ## 8.0.0
 
-**This release replaces `leveldown` and `level-js` with [`classic-level`](https://github.com/Level/classic-level) and [`browser-level`](https://github.com/Level/browser-level). These modules implement the [`abstract-level`](https://github.com/Level/abstract-level) interface instead of [`abstract-leveldown`](https://github.com/Level/abstract-leveldown). This gives them the same API as `level@7` without having to be wrapped with [`levelup`](https://github.com/Level/levelup) or [`encoding-down`](https://github.com/Level/encoding-down). In addition, you can now choose to use Uint8Array instead of Buffer. Sublevels are builtin.**
+**This release replaces `leveldown` and `level-js` with [`classic-level`](https://github.com/Level/classic-level) and [`browser-level`](https://github.com/Level/browser-level). These modules implement the [`abstract-level`](https://github.com/Level/abstract-level) interface instead of [`abstract-leveldown`](https://github.com/Level/abstract-leveldown). This gives them the same API as `level@7` without having to be wrapped with [`levelup`](https://github.com/Level/levelup) or [`encoding-down`](https://github.com/Level/encoding-down). In addition, you can now choose to use Uint8Array instead of Buffer. Sublevels are built-in.**
 
 We've put together several upgrade guides for different modules. See the [FAQ](https://github.com/Level/community#faq) to find the best upgrade guide for you. This one describes how to upgrade `level`.
 
@@ -135,8 +135,8 @@ On `db.close()`, non-closed iterators are now automatically closed (only for saf
 
 ### Other changes to iterators
 
-- In browsers, backpressure is now preferred over snapshot guarantees. For details, please see [`browser-level@1`](https://github.com/Level/browser-level/blob/main/UPGRADING.md#100). On the flip side, `iterator.seek()` method now also works in browsers.
-- Use of [`level-concat-iterator`](https://github.com/Level/concat-iterator) can be replaced with a new `iterator.all()` method. The former does support `abstract-level` databases (so you can postpone migrating) but the latter is optimized and always has snapshot guarantees.
+- In browsers, backpressure is now preferred over snapshot guarantees. For details, please see [`browser-level@1`](https://github.com/Level/browser-level/blob/main/UPGRADING.md#100). On the flip side, `iterator.seek()` now also works in browsers.
+- Use of [`level-concat-iterator`](https://github.com/Level/concat-iterator) can be replaced with [`iterator.all()`](https://github.com/Level/level#iteratoralloptions-callback). The former does support `abstract-level` databases but the latter is optimized and always has snapshot guarantees.
 - The previously undocumented `highWaterMark` option of `leveldown` is called [`highWaterMarkBytes`](https://github.com/Level/classic-level#about-high-water) in `classic-level` to remove a conflict with streams.
 - On iterators with `{ keys: false }` or `{ values: false }` options, the yielded key or value is now consistently `undefined`.
 
@@ -234,7 +234,7 @@ The following properties are now read-only getters.
 | db            | `db` (IDBDatabase) | `level-js`           | `browser-level`  |
 | chained batch | `length`           | `levelup`            | `abstract-level` |
 
-### Sublevels are builtin
+### Sublevels are built-in
 
 _This section is only relevant if you use [`subleveldown`](https://github.com/Level/subleveldown), which can not wrap a `level@8` database._
 

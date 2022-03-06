@@ -3,14 +3,10 @@ import * as ClassicLevel from 'classic-level'
 import * as BrowserLevel from 'browser-level'
 
 /**
- * A universal {@link AbstractLevel} database for Node.js and browsers, backed by
- * [LevelDB][1] and [IndexedDB][2] respectively.
+ * Universal {@link AbstractLevel} database for Node.js and browsers.
  *
  * @template KDefault The default type of keys if not overridden on operations.
  * @template VDefault The default type of values if not overridden on operations.
- *
- * [1]: https://github.com/google/leveldb
- * [2]: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
  */
 export class Level<KDefault = string, VDefault = string>
   extends AbstractLevel.AbstractLevel<string | Buffer | Uint8Array, KDefault, VDefault> {

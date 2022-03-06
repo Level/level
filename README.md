@@ -1,6 +1,6 @@
 # level
 
-**A universal [`abstract-level`](https://github.com/Level/abstract-level) database for Node.js and browsers, backed by [LevelDB](https://github.com/google/leveldb) and [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) respectively.** This is a convenience package that exports [`classic-level`](https://github.com/Level/classic-level) in Node.js and [`browser-level`](https://github.com/Level/browser-level) in browsers, making it an ideal entrypoint to start creating lexicographically sorted key-value databases.
+**Universal [`abstract-level`](https://github.com/Level/abstract-level) database for Node.js and browsers.** This is a convenience package that exports [`classic-level`](https://github.com/Level/classic-level) in Node.js and [`browser-level`](https://github.com/Level/browser-level) in browsers, making it an ideal entry point to start creating lexicographically sorted key-value databases.
 
 > :pushpin: Which module should I use? What is `abstract-level`? Head over to the [FAQ](https://github.com/Level/community#faq).
 
@@ -370,7 +370,7 @@ for await (const [key, value] of example.iterator()) {
 }
 ```
 
-Sublevels effectively separate a database into sections. Think SQL tables, but evented, ranged and realtime! Each sublevel is an `AbstractLevel` instance with its own keyspace, [events](https://github.com/Level/abstract-level#events) and [encodings](https://github.com/Level/abstract-level#encodings). For example, it's possible to have one sublevel with `'buffer'` keys and another with `'utf8'` keys. The same goes for values. Like so:
+Sublevels effectively separate a database into sections. Think SQL tables, but evented, ranged and real-time! Each sublevel is an `AbstractLevel` instance with its own keyspace, [events](https://github.com/Level/abstract-level#events) and [encodings](https://github.com/Level/abstract-level#encodings). For example, it's possible to have one sublevel with `'buffer'` keys and another with `'utf8'` keys. The same goes for values. Like so:
 
 ```js
 db.sublevel('one', { valueEncoding: 'json' })
