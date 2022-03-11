@@ -36,6 +36,16 @@ Deferred open - meaning that a database opens itself and any operations made in 
 
 An `abstract-level` and thus `level` database is not "patch-safe". If some form of plugin monkey-patches a database method, it must now also take the responsibility of deferring the operation (as well as handling promises and callbacks) using [`db.defer()`](https://github.com/Level/abstract-level#dbdeferfn).
 
+### Creating the location recursively
+
+To align behavior between platforms, `classic-level` and therefore `level@8` creates the location directory recursively. While `leveldown` and therefore `level@7` would only do so on Windows. In the following example, the `foo` directory does not have to exist beforehand:
+
+```js
+const db = new Level('foo/bar')
+```
+
+This new behavior may break expectations, given typical filesystem behavior, or it could be a convenient feature, if the database is considered to abstract away the filesystem. We're [collecting feedback](https://github.com/Level/classic-level/issues/7) to determine what to do in a next (major) version. Your vote is most welcome!
+
 ### No constructor callback
 
 The database constructor no longer takes a callback argument. Instead call `db.open()` if you wish to wait for opening (which is not necessary to use the database) or to capture an error. If that's your reason for using the callback and you previously initialized a database like so:
