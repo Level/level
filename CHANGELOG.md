@@ -1,5 +1,13 @@
 # Changelog
 
+## [8.0.0] - 2022-03-25
+
+_If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
+
+### Changed
+
+- **Breaking:** switch to `classic-level` and `browser-level` ([#215](https://github.com/Level/level/issues/215)) ([`ad22b21`](https://github.com/Level/level/commit/ad22b21)) (Vincent Weevers).
+
 ## [7.0.1] - 2021-10-02
 
 ### Added
@@ -410,6 +418,8 @@ _0.17.0 and 0.17.0-1 are listed out of order here, due to 0.17.0-1 not adhering 
 ## [0.8.0] - 2013-05-19
 
 :seedling: Initial release.
+
+[8.0.0]: https://github.com/Level/level/releases/tag/v8.0.0
 
 [7.0.1]: https://github.com/Level/level/releases/tag/v7.0.1
 
