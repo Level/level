@@ -65,6 +65,9 @@ export class Level<KDefault = string, VDefault = string>
 
   values (): ValueIterator<typeof this, KDefault, VDefault>
   values<K = KDefault, V = VDefault> (options: ValueIteratorOptions<K, V>): ValueIterator<typeof this, K, V>
+
+  static destroy (location: string): Promise<void>
+  static destroy (location: string, callback: AbstractLevel.NodeCallback<void>): void
 }
 
 export type DatabaseOptions<K, V> = ClassicLevel.DatabaseOptions<K, V> & BrowserLevel.DatabaseOptions<K, V>
