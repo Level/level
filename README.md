@@ -11,6 +11,7 @@
 [![Coverage](https://img.shields.io/codecov/c/github/Level/level?label=\&logo=codecov\&logoColor=fff)](https://codecov.io/gh/Level/level)
 [![Standard](https://img.shields.io/badge/standard-informational?logo=javascript\&logoColor=fff)](https://standardjs.com)
 [![Common Changelog](https://common-changelog.org/badge.svg)](https://common-changelog.org)
+[![Community](https://img.shields.io/badge/community-join-%2370B99E?logo=github)](https://github.com/Level/community/issues)
 [![Donate](https://img.shields.io/badge/donate-orange?logo=open-collective\&logoColor=fff)](https://opencollective.com/level)
 
 ## Table of Contents
