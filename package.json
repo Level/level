@@ -19,6 +19,7 @@
   ],
   "browser": "browser.js",
   "dependencies": {
+    "abstract-level": "^1.0.4",
     "browser-level": "^1.0.1",
     "classic-level": "^1.2.0"
   },
