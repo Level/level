@@ -18,7 +18,7 @@ jobs:
         run: npm install
       - name: Install Playwright
         if: matrix.node == 16
-        run: npx playwright install-deps
+        run: npx playwright install --with-deps
       - name: Test
         run: npm test
       - name: Test browsers
