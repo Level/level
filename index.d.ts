@@ -28,33 +28,21 @@ export class Level<KDefault = string, VDefault = string>
 
   open (): Promise<void>
   open (options: OpenOptions): Promise<void>
-  open (callback: AbstractLevel.NodeCallback<void>): void
-  open (options: OpenOptions, callback: AbstractLevel.NodeCallback<void>): void
 
   get (key: KDefault): Promise<VDefault>
-  get (key: KDefault, callback: AbstractLevel.NodeCallback<VDefault>): void
   get<K = KDefault, V = VDefault> (key: K, options: GetOptions<K, V>): Promise<V>
-  get<K = KDefault, V = VDefault> (key: K, options: GetOptions<K, V>, callback: AbstractLevel.NodeCallback<V>): void
 
   getMany (keys: KDefault[]): Promise<VDefault[]>
-  getMany (keys: KDefault[], callback: AbstractLevel.NodeCallback<VDefault[]>): void
   getMany<K = KDefault, V = VDefault> (keys: K[], options: GetManyOptions<K, V>): Promise<V[]>
-  getMany<K = KDefault, V = VDefault> (keys: K[], options: GetManyOptions<K, V>, callback: AbstractLevel.NodeCallback<V[]>): void
 
   put (key: KDefault, value: VDefault): Promise<void>
-  put (key: KDefault, value: VDefault, callback: AbstractLevel.NodeCallback<void>): void
   put<K = KDefault, V = VDefault> (key: K, value: V, options: PutOptions<K, V>): Promise<void>
-  put<K = KDefault, V = VDefault> (key: K, value: V, options: PutOptions<K, V>, callback: AbstractLevel.NodeCallback<void>): void
 
   del (key: KDefault): Promise<void>
-  del (key: KDefault, callback: AbstractLevel.NodeCallback<void>): void
   del<K = KDefault> (key: K, options: DelOptions<K>): Promise<void>
-  del<K = KDefault> (key: K, options: DelOptions<K>, callback: AbstractLevel.NodeCallback<void>): void
 
   batch (operations: Array<BatchOperation<typeof this, KDefault, VDefault>>): Promise<void>
-  batch (operations: Array<BatchOperation<typeof this, KDefault, VDefault>>, callback: AbstractLevel.NodeCallback<void>): void
   batch<K = KDefault, V = VDefault> (operations: Array<BatchOperation<typeof this, K, V>>, options: BatchOptions<K, V>): Promise<void>
-  batch<K = KDefault, V = VDefault> (operations: Array<BatchOperation<typeof this, K, V>>, options: BatchOptions<K, V>, callback: AbstractLevel.NodeCallback<void>): void
   batch (): ChainedBatch<typeof this, KDefault, VDefault>
 
   iterator (): Iterator<typeof this, KDefault, VDefault>
