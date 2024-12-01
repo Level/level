@@ -6,7 +6,7 @@
   "main": "index.js",
   "types": "./index.d.ts",
   "scripts": {
-    "test": "standard && ts-standard *.ts && nyc node test.js",
+    "test": "standard && nyc node test.js",
     "test-browsers-local": "airtap --coverage test.js && nyc report",
     "coverage": "nyc report -r lcovonly"
   },
@@ -24,16 +24,15 @@
     "classic-level": "^1.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.0.0",
-    "@voxpelli/tsconfig": "^4.0.0",
-    "airtap": "^4.0.1",
+    "@types/node": "^22.10.1",
+    "@voxpelli/tsconfig": "^15.1.0",
+    "airtap": "^5.0.0",
     "airtap-playwright": "^1.0.1",
-    "hallmark": "^4.0.0",
-    "nyc": "^15.0.0",
-    "standard": "^16.0.3",
-    "tape": "^5.0.1",
-    "ts-standard": "^11.0.0",
-    "typescript": "^4.5.5",
+    "hallmark": "^5.0.1",
+    "nyc": "^17.1.0",
+    "standard": "^17.1.2",
+    "tape": "^5.9.0",
+    "typescript": "^5.7.2",
     "uuid": "^9.0.0"
   },
   "funding": {

@@ -1,5 +1,5 @@
 {
-  "extends": "@voxpelli/tsconfig/node12.json",
+  "extends": "@voxpelli/tsconfig/node16.json",
   "compilerOptions": {
     "checkJs": false
   },
