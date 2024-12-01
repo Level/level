@@ -19,9 +19,9 @@
   ],
   "browser": "browser.js",
   "dependencies": {
-    "abstract-level": "^1.0.4",
-    "browser-level": "^1.0.1",
-    "classic-level": "^1.2.0"
+    "abstract-level": "^2.0.1",
+    "browser-level": "^2.0.0",
+    "classic-level": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
@@ -55,6 +55,6 @@
     "json"
   ],
   "engines": {
-    "node": ">=12"
+    "node": ">=18"
   }
 }

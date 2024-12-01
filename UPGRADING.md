@@ -2,6 +2,10 @@
 
 This document describes breaking changes and how to upgrade. For a complete list of changes including minor and patch releases, please refer to the [changelog](CHANGELOG.md).
 
+## 9.0.0
+
+This release upgrades to `abstract-level` 2.0.0 which adds [hooks](https://github.com/Level/abstract-level#hooks) and drops callbacks and not-found errors. Please refer to the [upgrade guide of `abstract-level`](https://github.com/Level/abstract-level/blob/v2.0.0/UPGRADING.md) for details. The only thing to add is that this release ends support of Node.js < 18 and Electron < 30.
+
 ## 8.0.0
 
 **This release replaces `leveldown` and `level-js` with [`classic-level`](https://github.com/Level/classic-level) and [`browser-level`](https://github.com/Level/browser-level). These modules implement the [`abstract-level`](https://github.com/Level/abstract-level) interface instead of [`abstract-leveldown`](https://github.com/Level/abstract-leveldown). This gives them the same API as `level@7` without having to be wrapped with [`levelup`](https://github.com/Level/levelup) or [`encoding-down`](https://github.com/Level/encoding-down). In addition, you can now choose to use Uint8Array instead of Buffer. Sublevels are built-in.**
