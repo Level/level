@@ -14,59 +14,6 @@
 [![Community](https://img.shields.io/badge/community-join-%2370B99E?logo=github)](https://github.com/Level/community/issues)
 [![Donate](https://img.shields.io/badge/donate-orange?logo=open-collective\&logoColor=fff)](https://opencollective.com/level)
 
-## Table of Contents
-
-<details><summary>Click to expand</summary>
-
-- [Usage](#usage)
-- [Install](#install)
-- [Supported Platforms](#supported-platforms)
-- [API](#api)
-  - [`db = new Level(location[, options])`](#db--new-levellocation-options)
-  - [`db.status`](#dbstatus)
-  - [`db.open([callback])`](#dbopencallback)
-  - [`db.close([callback])`](#dbclosecallback)
-  - [`db.supports`](#dbsupports)
-  - [`db.get(key[, options][, callback])`](#dbgetkey-options-callback)
-  - [`db.getMany(keys[, options][, callback])`](#dbgetmanykeys-options-callback)
-  - [`db.put(key, value[, options][, callback])`](#dbputkey-value-options-callback)
-  - [`db.del(key[, options][, callback])`](#dbdelkey-options-callback)
-  - [`db.batch(operations[, options][, callback])`](#dbbatchoperations-options-callback)
-  - [`chainedBatch = db.batch()`](#chainedbatch--dbbatch)
-  - [`iterator = db.iterator([options])`](#iterator--dbiteratoroptions)
-  - [`keyIterator = db.keys([options])`](#keyiterator--dbkeysoptions)
-  - [`valueIterator = db.values([options])`](#valueiterator--dbvaluesoptions)
-  - [`db.clear([options][, callback])`](#dbclearoptions-callback)
-  - [`sublevel = db.sublevel(name[, options])`](#sublevel--dbsublevelname-options)
-  - [`chainedBatch`](#chainedbatch)
-    - [`chainedBatch.put(key, value[, options])`](#chainedbatchputkey-value-options)
-    - [`chainedBatch.del(key[, options])`](#chainedbatchdelkey-options)
-    - [`chainedBatch.clear()`](#chainedbatchclear)
-    - [`chainedBatch.write([options][, callback])`](#chainedbatchwriteoptions-callback)
-    - [`chainedBatch.close([callback])`](#chainedbatchclosecallback)
-    - [`chainedBatch.length`](#chainedbatchlength)
-    - [`chainedBatch.db`](#chainedbatchdb)
-  - [`iterator`](#iterator)
-    - [`for await...of iterator`](#for-awaitof-iterator)
-    - [`iterator.next([callback])`](#iteratornextcallback)
-    - [`iterator.nextv(size[, options][, callback])`](#iteratornextvsize-options-callback)
-    - [`iterator.all([options][, callback])`](#iteratoralloptions-callback)
-    - [`iterator.seek(target[, options])`](#iteratorseektarget-options)
-    - [`iterator.close([callback])`](#iteratorclosecallback)
-    - [`iterator.db`](#iteratordb)
-    - [`iterator.count`](#iteratorcount)
-    - [`iterator.limit`](#iteratorlimit)
-  - [`keyIterator`](#keyiterator)
-  - [`valueIterator`](#valueiterator)
-  - [`sublevel`](#sublevel)
-    - [`sublevel.prefix`](#sublevelprefix)
-    - [`sublevel.db`](#subleveldb)
-- [Contributing](#contributing)
-- [Donate](#donate)
-- [License](#license)
-
-</details>
-
 ## Usage
 
 _If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
