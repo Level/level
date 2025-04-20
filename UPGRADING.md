@@ -2,6 +2,18 @@
 
 This document describes breaking changes and how to upgrade. For a complete list of changes including minor and patch releases, please refer to the [changelog](CHANGELOG.md).
 
+## 10.0.0
+
+This release upgrades to `abstract-level` 3. Please see its [upgrade guide](https://github.com/Level/abstract-level/blob/v3.0.0/UPGRADING.md).
+
+Not mentioned in that guide is the later addition of `db.getSync()`. This new method blocks the event loop but can be significantly faster than `db.get()`:
+
+```js
+const value = db.getSync('example')
+```
+
+It is only supported in Node.js (via `classic-level`) and not in browsers.
+
 ## 9.0.0
 
 This release upgrades to `abstract-level` 2.0.0 which adds [hooks](https://github.com/Level/abstract-level#hooks) and drops callbacks and not-found errors. Please refer to the [upgrade guide of `abstract-level`](https://github.com/Level/abstract-level/blob/v2.0.0/UPGRADING.md) for details. The only thing to add is that this release ends support of Node.js < 18 and Electron < 30.

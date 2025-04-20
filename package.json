@@ -19,9 +19,9 @@
   ],
   "browser": "browser.js",
   "dependencies": {
-    "abstract-level": "^2.0.1",
-    "browser-level": "^2.0.0",
-    "classic-level": "^2.0.0"
+    "abstract-level": "^3.1.0",
+    "browser-level": "^3.0.0",
+    "classic-level": "^3.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",
