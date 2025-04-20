@@ -2,6 +2,45 @@
 
 This document describes breaking changes and how to upgrade. For a complete list of changes including minor and patch releases, please refer to the [changelog](CHANGELOG.md).
 
+## 10.0.0
+
+This release upgrades to `abstract-level` 3. Please see its [upgrade guide](https://github.com/Level/abstract-level/blob/v3.0.0/UPGRADING.md) for details. On this end we'll only summarize its new features, because they're not supported in all environments.
+
+In Node.js (but not browsers) you can now create "explicit snapshots" to read previous versions of a database:
+
+```js
+await db.put('example', 'before')
+const snapshot = db.snapshot()
+await db.put('example', 'after')
+await db.get('example', { snapshot })) // Returns 'before'
+await snapshot.close()
+```
+
+In Node.js with TypeScript (5.2) that last `close()` call can be skipped because we added support of [`Symbol.asyncDispose`](https://github.com/tc39/proposal-explicit-resource-management) on databases, iterators and snapshots:
+
+```ts
+await db.put('example', 'before')
+await using snapshot = db.snapshot()
+await db.put('example', 'after')
+await db.get('example', { snapshot })) // Returns 'before'
+```
+
+In Node.js and browsers you can use newly-added `has()` and `hasMany()` methods to check if keys exist without the cost of fetching values:
+
+```js
+if (await db.has('fruit')) {
+  console.log('We have fruit')
+}
+```
+
+In Node.js you can (in certain cases) improve application performance using a new `getSync()` method that blocks the event loop but can be significantly faster than the asynchronous `db.get()` method:
+
+```js
+const value = db.getSync('example')
+```
+
+Lastly, `has()`, `hasMany()` and `getSync()` also support explicit snapshots. Bon appétit!
+
 ## 9.0.0
 
 This release upgrades to `abstract-level` 2.0.0 which adds [hooks](https://github.com/Level/abstract-level#hooks) and drops callbacks and not-found errors. Please refer to the [upgrade guide of `abstract-level`](https://github.com/Level/abstract-level/blob/v2.0.0/UPGRADING.md) for details. The only thing to add is that this release ends support of Node.js < 18 and Electron < 30.
