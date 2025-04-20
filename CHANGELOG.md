@@ -1,5 +1,13 @@
 # Changelog
 
+## [10.0.0] - 2025-04-20
+
+_If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
+
+### Changed
+
+- **Breaking:** upgrade to abstract-level 3 ([#248](https://github.com/Level/level/issues/248)) ([`b27277c`](https://github.com/Level/level/commit/b27277c)) (Vincent Weevers)
+
 ## [9.0.0] - 2024-12-01
 
 _If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
@@ -432,6 +440,8 @@ _0.17.0 and 0.17.0-1 are listed out of order here, due to 0.17.0-1 not adhering 
 ## [0.8.0] - 2013-05-19
 
 :seedling: Initial release.
+
+[10.0.0]: https://github.com/Level/level/releases/tag/v10.0.0
 
 [9.0.0]: https://github.com/Level/level/releases/tag/v9.0.0
 
