@@ -35,7 +35,7 @@
     "standard": "^17.1.2",
     "tape": "^5.9.0",
     "typescript": "^5.7.2",
-    "uuid": "^11.1.0"
+    "uuid": "^13.0.0"
   },
   "funding": {
     "type": "opencollective",
