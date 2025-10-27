@@ -29,11 +29,11 @@ export class Level<KDefault = string, VDefault = string>
   open (): Promise<void>
   open (options: OpenOptions): Promise<void>
 
-  get (key: KDefault): Promise<VDefault>
-  get<K = KDefault, V = VDefault> (key: K, options: GetOptions<K, V>): Promise<V>
+  get (key: KDefault): Promise<VDefault | undefined>
+  get<K = KDefault, V = VDefault> (key: K, options: GetOptions<K, V>): Promise<V | undefined>
 
-  getMany (keys: KDefault[]): Promise<VDefault[]>
-  getMany<K = KDefault, V = VDefault> (keys: K[], options: GetManyOptions<K, V>): Promise<V[]>
+  getMany (keys: KDefault[]): Promise<(VDefault | undefined)[]>
+  getMany<K = KDefault, V = VDefault> (keys: K[], options: GetManyOptions<K, V>): Promise<(V | undefined)[]>
 
   put (key: KDefault, value: VDefault): Promise<void>
   put<K = KDefault, V = VDefault> (key: K, value: V, options: PutOptions<K, V>): Promise<void>
