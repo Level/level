@@ -7,6 +7,9 @@ updates:
     ignore:
       - dependency-name: standard
       - dependency-name: hallmark
+      - dependency-name: "@types/node"
+      - dependency-name: "@voxpelli/tsconfig"
+      - dependency-name: typescript
   - package-ecosystem: github-actions
     directory: /
     schedule:
