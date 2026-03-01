@@ -31,7 +31,7 @@
     "airtap-playwright": "^1.0.1",
     "babelify": "^10.0.0",
     "hallmark": "^5.0.1",
-    "nyc": "^17.1.0",
+    "nyc": "^18.0.0",
     "standard": "^17.1.2",
     "tape": "^5.9.0",
     "typescript": "^5.7.2",
