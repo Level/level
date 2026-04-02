@@ -27,7 +27,7 @@ jobs:
       - name: Coverage
         run: npm run coverage
       - name: Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           files: coverage/lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
